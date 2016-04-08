@@ -1,0 +1,683 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BF0A0F5E1CB3573100B9D403 /* DateTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0A0F5D1CB3573100B9D403 /* DateTestViewController.m */; };
+		BF0A0F641CB361E900B9D403 /* DateSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0A0F631CB361E900B9D403 /* DateSelectView.m */; };
+		BF0A0F661CB362A500B9D403 /* DateSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF0A0F651CB362A500B9D403 /* DateSelectView.xib */; };
+		BF0A0F691CB36F4800B9D403 /* nextDate_off.png in Resources */ = {isa = PBXBuildFile; fileRef = BF0A0F671CB36F4800B9D403 /* nextDate_off.png */; };
+		BF0A0F6A1CB36F4800B9D403 /* preDate_off.png in Resources */ = {isa = PBXBuildFile; fileRef = BF0A0F681CB36F4800B9D403 /* preDate_off.png */; };
+		BF0A0F6E1CB3700200B9D403 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = BF0A0F6B1CB3700200B9D403 /* calendar.png */; };
+		BF0A0F6F1CB3700200B9D403 /* calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF0A0F6C1CB3700200B9D403 /* calendar@2x.png */; };
+		BF0A0F701CB3700200B9D403 /* calendar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF0A0F6D1CB3700200B9D403 /* calendar@3x.png */; };
+		BF0A0F901CB3B49D00B9D403 /* NSDate+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0A0F8F1CB3B49D00B9D403 /* NSDate+Utilities.m */; };
+		BF0A0F931CB3BBDA00B9D403 /* GGDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0A0F921CB3BBDA00B9D403 /* GGDatePicker.m */; };
+		BF0A0F951CB3BBF600B9D403 /* GGDatePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF0A0F941CB3BBF600B9D403 /* GGDatePicker.xib */; };
+		BF3C62D51C5CD2A000B25252 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3C62D41C5CD2A000B25252 /* main.m */; };
+		BF3C62DE1C5CD2A000B25252 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF3C62DC1C5CD2A000B25252 /* Main.storyboard */; };
+		BF3C62E01C5CD2A000B25252 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF3C62DF1C5CD2A000B25252 /* Assets.xcassets */; };
+		BF3C62E31C5CD2A000B25252 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF3C62E11C5CD2A000B25252 /* LaunchScreen.storyboard */; };
+		BF3C62EE1C5CD2A000B25252 /* zewatchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3C62ED1C5CD2A000B25252 /* zewatchTests.m */; };
+		BF3C62F91C5CD2A000B25252 /* zewatchUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3C62F81C5CD2A000B25252 /* zewatchUITests.m */; };
+		BF3C630A1C5CDA9800B25252 /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3C63091C5CDA9800B25252 /* ActivityViewController.m */; };
+		BF6D5CDB1C60733F00AF22BA /* GoalSettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6D5CDA1C60733F00AF22BA /* GoalSettingTableViewController.m */; };
+		BF790FC01C5CE2B400377742 /* ZeWatchAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF790FBF1C5CE2B400377742 /* ZeWatchAppDelegate.m */; };
+		BF790FC41C5CE97500377742 /* activity_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = BF790FC31C5CE97500377742 /* activity_bg.png */; };
+		BFE7C2EC1C6078E9008A5719 /* icon_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = BFE7C2EB1C6078E9008A5719 /* icon_logo.png */; };
+		BFE7C2F11C608B6E008A5719 /* ActivityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE7C2EF1C608B6E008A5719 /* ActivityTableViewCell.m */; };
+		BFE7C2F21C608B6E008A5719 /* ActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFE7C2F01C608B6E008A5719 /* ActivityTableViewCell.xib */; };
+		BFE7C2F61C6096A8008A5719 /* ActivityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE7C2F51C6096A8008A5719 /* ActivityModel.m */; };
+		BFE7C2F91C60BB01008A5719 /* AppsCircleProView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE7C2F81C60BB01008A5719 /* AppsCircleProView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BF3C62EA1C5CD2A000B25252 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF3C62C81C5CD2A000B25252 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF3C62CF1C5CD2A000B25252;
+			remoteInfo = zewatch;
+		};
+		BF3C62F51C5CD2A000B25252 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF3C62C81C5CD2A000B25252 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF3C62CF1C5CD2A000B25252;
+			remoteInfo = zewatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BF0A0F5C1CB3573100B9D403 /* DateTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DateTestViewController.h; path = zewatch/controller/home/DateTestViewController.h; sourceTree = SOURCE_ROOT; };
+		BF0A0F5D1CB3573100B9D403 /* DateTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DateTestViewController.m; path = zewatch/controller/home/DateTestViewController.m; sourceTree = SOURCE_ROOT; };
+		BF0A0F621CB361E900B9D403 /* DateSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateSelectView.h; sourceTree = "<group>"; };
+		BF0A0F631CB361E900B9D403 /* DateSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateSelectView.m; sourceTree = "<group>"; };
+		BF0A0F651CB362A500B9D403 /* DateSelectView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DateSelectView.xib; sourceTree = "<group>"; };
+		BF0A0F671CB36F4800B9D403 /* nextDate_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nextDate_off.png; sourceTree = "<group>"; };
+		BF0A0F681CB36F4800B9D403 /* preDate_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = preDate_off.png; sourceTree = "<group>"; };
+		BF0A0F6B1CB3700200B9D403 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
+		BF0A0F6C1CB3700200B9D403 /* calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar@2x.png"; sourceTree = "<group>"; };
+		BF0A0F6D1CB3700200B9D403 /* calendar@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar@3x.png"; sourceTree = "<group>"; };
+		BF0A0F8E1CB3B49D00B9D403 /* NSDate+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utilities.h"; sourceTree = "<group>"; };
+		BF0A0F8F1CB3B49D00B9D403 /* NSDate+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Utilities.m"; sourceTree = "<group>"; };
+		BF0A0F911CB3BBDA00B9D403 /* GGDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGDatePicker.h; sourceTree = "<group>"; };
+		BF0A0F921CB3BBDA00B9D403 /* GGDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGDatePicker.m; sourceTree = "<group>"; };
+		BF0A0F941CB3BBF600B9D403 /* GGDatePicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GGDatePicker.xib; sourceTree = "<group>"; };
+		BF3C62D01C5CD2A000B25252 /* zewatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zewatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF3C62D41C5CD2A000B25252 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BF3C62DD1C5CD2A000B25252 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BF3C62DF1C5CD2A000B25252 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BF3C62E21C5CD2A000B25252 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BF3C62E41C5CD2A000B25252 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF3C62E91C5CD2A000B25252 /* zewatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = zewatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF3C62ED1C5CD2A000B25252 /* zewatchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = zewatchTests.m; sourceTree = "<group>"; };
+		BF3C62EF1C5CD2A000B25252 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF3C62F41C5CD2A000B25252 /* zewatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = zewatchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF3C62F81C5CD2A000B25252 /* zewatchUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = zewatchUITests.m; sourceTree = "<group>"; };
+		BF3C62FA1C5CD2A000B25252 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF3C63081C5CDA9800B25252 /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActivityViewController.h; path = zewatch/controller/home/ActivityViewController.h; sourceTree = SOURCE_ROOT; };
+		BF3C63091C5CDA9800B25252 /* ActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActivityViewController.m; path = zewatch/controller/home/ActivityViewController.m; sourceTree = SOURCE_ROOT; };
+		BF6D5CD91C60733F00AF22BA /* GoalSettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GoalSettingTableViewController.h; path = ../../../../../../../apple/Desktop/mykronoz/zewatch/zewatch/controller/home/GoalSettingTableViewController.h; sourceTree = "<group>"; };
+		BF6D5CDA1C60733F00AF22BA /* GoalSettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GoalSettingTableViewController.m; path = ../../../../../../../apple/Desktop/mykronoz/zewatch/zewatch/controller/home/GoalSettingTableViewController.m; sourceTree = "<group>"; };
+		BF790FBD1C5CDE0600377742 /* zewatch-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "zewatch-Prefix.pch"; sourceTree = "<group>"; };
+		BF790FBE1C5CE2B400377742 /* ZeWatchAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZeWatchAppDelegate.h; sourceTree = "<group>"; };
+		BF790FBF1C5CE2B400377742 /* ZeWatchAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZeWatchAppDelegate.m; sourceTree = "<group>"; };
+		BF790FC31C5CE97500377742 /* activity_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = activity_bg.png; sourceTree = "<group>"; };
+		BFE7C2EB1C6078E9008A5719 /* icon_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_logo.png; sourceTree = "<group>"; };
+		BFE7C2EE1C608B6E008A5719 /* ActivityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActivityTableViewCell.h; path = ../../../../../../apple/Desktop/mykronoz/zewatch/zewatch/CustomView/ActivityTableViewCell.h; sourceTree = "<group>"; };
+		BFE7C2EF1C608B6E008A5719 /* ActivityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActivityTableViewCell.m; path = ../../../../../../apple/Desktop/mykronoz/zewatch/zewatch/CustomView/ActivityTableViewCell.m; sourceTree = "<group>"; };
+		BFE7C2F01C608B6E008A5719 /* ActivityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ActivityTableViewCell.xib; path = ../../../../../../apple/Desktop/mykronoz/zewatch/zewatch/CustomView/ActivityTableViewCell.xib; sourceTree = "<group>"; };
+		BFE7C2F41C6096A8008A5719 /* ActivityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActivityModel.h; path = ../../../../../../apple/Desktop/mykronoz/zewatch/zewatch/CustomModel/ActivityModel.h; sourceTree = "<group>"; };
+		BFE7C2F51C6096A8008A5719 /* ActivityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActivityModel.m; path = ../../../../../../apple/Desktop/mykronoz/zewatch/zewatch/CustomModel/ActivityModel.m; sourceTree = "<group>"; };
+		BFE7C2F71C60BB01008A5719 /* AppsCircleProView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsCircleProView.h; path = ../../../../../../apple/Desktop/mykronoz/zewatch/zewatch/CustomView/AppsCircleProView.h; sourceTree = "<group>"; };
+		BFE7C2F81C60BB01008A5719 /* AppsCircleProView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsCircleProView.m; path = ../../../../../../apple/Desktop/mykronoz/zewatch/zewatch/CustomView/AppsCircleProView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BF3C62CD1C5CD2A000B25252 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF3C62E61C5CD2A000B25252 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF3C62F11C5CD2A000B25252 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BF0A0F711CB3B29900B9D403 /* Third */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Third;
+			sourceTree = "<group>";
+		};
+		BF0A0F8D1CB3B49D00B9D403 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				BF0A0F8E1CB3B49D00B9D403 /* NSDate+Utilities.h */,
+				BF0A0F8F1CB3B49D00B9D403 /* NSDate+Utilities.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		BF3C62C71C5CD2A000B25252 = {
+			isa = PBXGroup;
+			children = (
+				BF3C62D21C5CD2A000B25252 /* zewatch */,
+				BF3C62EC1C5CD2A000B25252 /* zewatchTests */,
+				BF3C62F71C5CD2A000B25252 /* zewatchUITests */,
+				BF3C62D11C5CD2A000B25252 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BF3C62D11C5CD2A000B25252 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BF3C62D01C5CD2A000B25252 /* zewatch.app */,
+				BF3C62E91C5CD2A000B25252 /* zewatchTests.xctest */,
+				BF3C62F41C5CD2A000B25252 /* zewatchUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BF3C62D21C5CD2A000B25252 /* zewatch */ = {
+			isa = PBXGroup;
+			children = (
+				BF0A0F8D1CB3B49D00B9D403 /* Category */,
+				BF0A0F711CB3B29900B9D403 /* Third */,
+				BFE7C2F31C609617008A5719 /* CustomModel */,
+				BFE7C2ED1C60893A008A5719 /* CustomView */,
+				BF3C63061C5CDA8900B25252 /* controller */,
+				BF790FBE1C5CE2B400377742 /* ZeWatchAppDelegate.h */,
+				BF790FBF1C5CE2B400377742 /* ZeWatchAppDelegate.m */,
+				BF3C62DC1C5CD2A000B25252 /* Main.storyboard */,
+				BF3C62DF1C5CD2A000B25252 /* Assets.xcassets */,
+				BF3C62E11C5CD2A000B25252 /* LaunchScreen.storyboard */,
+				BF3C62E41C5CD2A000B25252 /* Info.plist */,
+				BF3C62D31C5CD2A000B25252 /* Supporting Files */,
+			);
+			path = zewatch;
+			sourceTree = "<group>";
+		};
+		BF3C62D31C5CD2A000B25252 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BF790FC11C5CE97500377742 /* Resource */,
+				BF790FBD1C5CDE0600377742 /* zewatch-Prefix.pch */,
+				BF3C62D41C5CD2A000B25252 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BF3C62EC1C5CD2A000B25252 /* zewatchTests */ = {
+			isa = PBXGroup;
+			children = (
+				BF3C62ED1C5CD2A000B25252 /* zewatchTests.m */,
+				BF3C62EF1C5CD2A000B25252 /* Info.plist */,
+			);
+			path = zewatchTests;
+			sourceTree = "<group>";
+		};
+		BF3C62F71C5CD2A000B25252 /* zewatchUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BF3C62F81C5CD2A000B25252 /* zewatchUITests.m */,
+				BF3C62FA1C5CD2A000B25252 /* Info.plist */,
+			);
+			path = zewatchUITests;
+			sourceTree = "<group>";
+		};
+		BF3C63061C5CDA8900B25252 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				BF3C63071C5CDA8900B25252 /* home */,
+			);
+			name = controller;
+			path = ../../../../../Apple/Desktop/mykronoz/zewatch/zewatch/controller;
+			sourceTree = "<group>";
+		};
+		BF3C63071C5CDA8900B25252 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				BF3C63081C5CDA9800B25252 /* ActivityViewController.h */,
+				BF3C63091C5CDA9800B25252 /* ActivityViewController.m */,
+				BF6D5CD91C60733F00AF22BA /* GoalSettingTableViewController.h */,
+				BF6D5CDA1C60733F00AF22BA /* GoalSettingTableViewController.m */,
+				BF0A0F5C1CB3573100B9D403 /* DateTestViewController.h */,
+				BF0A0F5D1CB3573100B9D403 /* DateTestViewController.m */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		BF790FC11C5CE97500377742 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				BF790FC21C5CE97500377742 /* ImageResource */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		BF790FC21C5CE97500377742 /* ImageResource */ = {
+			isa = PBXGroup;
+			children = (
+				BF0A0F6B1CB3700200B9D403 /* calendar.png */,
+				BF0A0F6C1CB3700200B9D403 /* calendar@2x.png */,
+				BF0A0F6D1CB3700200B9D403 /* calendar@3x.png */,
+				BF0A0F671CB36F4800B9D403 /* nextDate_off.png */,
+				BF0A0F681CB36F4800B9D403 /* preDate_off.png */,
+				BF790FC31C5CE97500377742 /* activity_bg.png */,
+				BFE7C2EB1C6078E9008A5719 /* icon_logo.png */,
+			);
+			path = ImageResource;
+			sourceTree = "<group>";
+		};
+		BFE7C2ED1C60893A008A5719 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				BFE7C2F71C60BB01008A5719 /* AppsCircleProView.h */,
+				BFE7C2F81C60BB01008A5719 /* AppsCircleProView.m */,
+				BFE7C2EE1C608B6E008A5719 /* ActivityTableViewCell.h */,
+				BFE7C2EF1C608B6E008A5719 /* ActivityTableViewCell.m */,
+				BFE7C2F01C608B6E008A5719 /* ActivityTableViewCell.xib */,
+				BF0A0F621CB361E900B9D403 /* DateSelectView.h */,
+				BF0A0F631CB361E900B9D403 /* DateSelectView.m */,
+				BF0A0F651CB362A500B9D403 /* DateSelectView.xib */,
+				BF0A0F911CB3BBDA00B9D403 /* GGDatePicker.h */,
+				BF0A0F921CB3BBDA00B9D403 /* GGDatePicker.m */,
+				BF0A0F941CB3BBF600B9D403 /* GGDatePicker.xib */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		BFE7C2F31C609617008A5719 /* CustomModel */ = {
+			isa = PBXGroup;
+			children = (
+				BFE7C2F41C6096A8008A5719 /* ActivityModel.h */,
+				BFE7C2F51C6096A8008A5719 /* ActivityModel.m */,
+			);
+			path = CustomModel;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BF3C62CF1C5CD2A000B25252 /* zewatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF3C62FD1C5CD2A000B25252 /* Build configuration list for PBXNativeTarget "zewatch" */;
+			buildPhases = (
+				BF3C62CC1C5CD2A000B25252 /* Sources */,
+				BF3C62CD1C5CD2A000B25252 /* Frameworks */,
+				BF3C62CE1C5CD2A000B25252 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = zewatch;
+			productName = zewatch;
+			productReference = BF3C62D01C5CD2A000B25252 /* zewatch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BF3C62E81C5CD2A000B25252 /* zewatchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF3C63001C5CD2A000B25252 /* Build configuration list for PBXNativeTarget "zewatchTests" */;
+			buildPhases = (
+				BF3C62E51C5CD2A000B25252 /* Sources */,
+				BF3C62E61C5CD2A000B25252 /* Frameworks */,
+				BF3C62E71C5CD2A000B25252 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF3C62EB1C5CD2A000B25252 /* PBXTargetDependency */,
+			);
+			name = zewatchTests;
+			productName = zewatchTests;
+			productReference = BF3C62E91C5CD2A000B25252 /* zewatchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BF3C62F31C5CD2A000B25252 /* zewatchUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF3C63031C5CD2A000B25252 /* Build configuration list for PBXNativeTarget "zewatchUITests" */;
+			buildPhases = (
+				BF3C62F01C5CD2A000B25252 /* Sources */,
+				BF3C62F11C5CD2A000B25252 /* Frameworks */,
+				BF3C62F21C5CD2A000B25252 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF3C62F61C5CD2A000B25252 /* PBXTargetDependency */,
+			);
+			name = zewatchUITests;
+			productName = zewatchUITests;
+			productReference = BF3C62F41C5CD2A000B25252 /* zewatchUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BF3C62C81C5CD2A000B25252 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = mykronoz;
+				TargetAttributes = {
+					BF3C62CF1C5CD2A000B25252 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					BF3C62E81C5CD2A000B25252 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = BF3C62CF1C5CD2A000B25252;
+					};
+					BF3C62F31C5CD2A000B25252 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = BF3C62CF1C5CD2A000B25252;
+					};
+				};
+			};
+			buildConfigurationList = BF3C62CB1C5CD2A000B25252 /* Build configuration list for PBXProject "zewatch" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BF3C62C71C5CD2A000B25252;
+			productRefGroup = BF3C62D11C5CD2A000B25252 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BF3C62CF1C5CD2A000B25252 /* zewatch */,
+				BF3C62E81C5CD2A000B25252 /* zewatchTests */,
+				BF3C62F31C5CD2A000B25252 /* zewatchUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BF3C62CE1C5CD2A000B25252 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFE7C2EC1C6078E9008A5719 /* icon_logo.png in Resources */,
+				BF3C62E31C5CD2A000B25252 /* LaunchScreen.storyboard in Resources */,
+				BF0A0F951CB3BBF600B9D403 /* GGDatePicker.xib in Resources */,
+				BF0A0F6A1CB36F4800B9D403 /* preDate_off.png in Resources */,
+				BF0A0F6F1CB3700200B9D403 /* calendar@2x.png in Resources */,
+				BF0A0F691CB36F4800B9D403 /* nextDate_off.png in Resources */,
+				BF3C62E01C5CD2A000B25252 /* Assets.xcassets in Resources */,
+				BF3C62DE1C5CD2A000B25252 /* Main.storyboard in Resources */,
+				BF0A0F701CB3700200B9D403 /* calendar@3x.png in Resources */,
+				BF0A0F661CB362A500B9D403 /* DateSelectView.xib in Resources */,
+				BF0A0F6E1CB3700200B9D403 /* calendar.png in Resources */,
+				BFE7C2F21C608B6E008A5719 /* ActivityTableViewCell.xib in Resources */,
+				BF790FC41C5CE97500377742 /* activity_bg.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF3C62E71C5CD2A000B25252 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF3C62F21C5CD2A000B25252 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BF3C62CC1C5CD2A000B25252 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF0A0F5E1CB3573100B9D403 /* DateTestViewController.m in Sources */,
+				BF790FC01C5CE2B400377742 /* ZeWatchAppDelegate.m in Sources */,
+				BF3C630A1C5CDA9800B25252 /* ActivityViewController.m in Sources */,
+				BFE7C2F61C6096A8008A5719 /* ActivityModel.m in Sources */,
+				BFE7C2F91C60BB01008A5719 /* AppsCircleProView.m in Sources */,
+				BF6D5CDB1C60733F00AF22BA /* GoalSettingTableViewController.m in Sources */,
+				BF3C62D51C5CD2A000B25252 /* main.m in Sources */,
+				BF0A0F931CB3BBDA00B9D403 /* GGDatePicker.m in Sources */,
+				BF0A0F901CB3B49D00B9D403 /* NSDate+Utilities.m in Sources */,
+				BF0A0F641CB361E900B9D403 /* DateSelectView.m in Sources */,
+				BFE7C2F11C608B6E008A5719 /* ActivityTableViewCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF3C62E51C5CD2A000B25252 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF3C62EE1C5CD2A000B25252 /* zewatchTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF3C62F01C5CD2A000B25252 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF3C62F91C5CD2A000B25252 /* zewatchUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BF3C62EB1C5CD2A000B25252 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF3C62CF1C5CD2A000B25252 /* zewatch */;
+			targetProxy = BF3C62EA1C5CD2A000B25252 /* PBXContainerItemProxy */;
+		};
+		BF3C62F61C5CD2A000B25252 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF3C62CF1C5CD2A000B25252 /* zewatch */;
+			targetProxy = BF3C62F51C5CD2A000B25252 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BF3C62DC1C5CD2A000B25252 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF3C62DD1C5CD2A000B25252 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BF3C62E11C5CD2A000B25252 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF3C62E21C5CD2A000B25252 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BF3C62FB1C5CD2A000B25252 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				New_Setting = "";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		BF3C62FC1C5CD2A000B25252 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				New_Setting = "";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BF3C62FE1C5CD2A000B25252 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "zewatch/zewatch-Prefix.pch";
+				INFOPLIST_FILE = zewatch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mykronoz.zewatch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BF3C62FF1C5CD2A000B25252 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "zewatch/zewatch-Prefix.pch";
+				INFOPLIST_FILE = zewatch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mykronoz.zewatch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		BF3C63011C5CD2A000B25252 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = zewatchTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mykronoz.zewatchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/zewatch.app/zewatch";
+			};
+			name = Debug;
+		};
+		BF3C63021C5CD2A000B25252 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = zewatchTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mykronoz.zewatchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/zewatch.app/zewatch";
+			};
+			name = Release;
+		};
+		BF3C63041C5CD2A000B25252 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = zewatchUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mykronoz.zewatchUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = zewatch;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		BF3C63051C5CD2A000B25252 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = zewatchUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mykronoz.zewatchUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = zewatch;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BF3C62CB1C5CD2A000B25252 /* Build configuration list for PBXProject "zewatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF3C62FB1C5CD2A000B25252 /* Debug */,
+				BF3C62FC1C5CD2A000B25252 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF3C62FD1C5CD2A000B25252 /* Build configuration list for PBXNativeTarget "zewatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF3C62FE1C5CD2A000B25252 /* Debug */,
+				BF3C62FF1C5CD2A000B25252 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF3C63001C5CD2A000B25252 /* Build configuration list for PBXNativeTarget "zewatchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF3C63011C5CD2A000B25252 /* Debug */,
+				BF3C63021C5CD2A000B25252 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF3C63031C5CD2A000B25252 /* Build configuration list for PBXNativeTarget "zewatchUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF3C63041C5CD2A000B25252 /* Debug */,
+				BF3C63051C5CD2A000B25252 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BF3C62C81C5CD2A000B25252 /* Project object */;
+}
