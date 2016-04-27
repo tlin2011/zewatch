@@ -18,7 +18,9 @@
 #define SCREENWIDTH  [UIScreen mainScreen].bounds.size.width
 #define SCREENHEIGHT  [UIScreen mainScreen].bounds.size.height
 
-#define THEMECOLOR    [UIColor blackColor]
+#define THEMECOLOR    [UIColor colorWithRed:47.0f/255.0f green:169.0f/255.0f blue:141.0f/255.0f alpha:1]
+
+#define GGRGB(r,g,b)            [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0]
 
 #define SECONDSPERDAY 24 * 60 * 60
 

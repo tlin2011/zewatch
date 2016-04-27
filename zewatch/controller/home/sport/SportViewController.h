@@ -7,7 +7,9 @@
 //
 
 #import "GGBaseViewController.h"
+#import "DateSelectView.h"
+#import "GGColumnView.h"
 
-@interface SportViewController : GGBaseViewController
+@interface SportViewController : GGBaseViewController<DateSelectViewDelegate,GGColumeViewDelegate>
 
 @end

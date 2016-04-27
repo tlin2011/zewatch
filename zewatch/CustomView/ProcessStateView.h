@@ -10,4 +10,13 @@
 
 @interface ProcessStateView : UIView
 
+-(instancetype)initWithValue:(NSString *)value Goal:(NSString *)goal unit:(NSString *)unit;
+
+/**
+ *  @author guotonglin
+ *
+ *  切换显示模式
+ */
+-(void)switchModel:(BOOL)showGoal;
+
 @end

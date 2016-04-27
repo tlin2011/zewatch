@@ -22,6 +22,8 @@
 
 @property(nonatomic,assign)id<GGDatePickerDelegate> delegate;
 
+@property (weak, nonatomic) IBOutlet UIToolbar *toolBtn;
+
 @property (weak, nonatomic) IBOutlet UIPickerView *datePicker;
 
 -(instancetype)initDatePicker;

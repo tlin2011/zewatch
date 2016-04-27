@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ActivityViewController : UITableViewController
+#import "DateSelectView.h"
+
+@interface ActivityViewController : UITableViewController<DateSelectViewDelegate>
 
 @end

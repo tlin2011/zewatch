@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-#define  VIEWHEIGHT 50
+#define  VIEWHEIGHT 60
 
 #import "GGDatePicker.h"
 
@@ -55,8 +55,6 @@ typedef enum{
  */
 - (IBAction)clickSelectDate:(UIButton *)sender;
 
-
-
 @property(nonatomic,assign)id<DateSelectViewDelegate>  delegate;
 
 
@@ -64,5 +62,8 @@ typedef enum{
  *  位置  和 类型
  */
 -(instancetype)initWithPosition:(CGPoint)point dateType:(DateSelectType)dateType delegate:(nullable id<DateSelectViewDelegate>)delegate;
+
+-(void)switchToType:(DateSelectType)toSelectType;
+
 
 @end

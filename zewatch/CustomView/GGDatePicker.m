@@ -33,6 +33,10 @@
         NSArray *tempNib= [[NSBundle mainBundle] loadNibNamed:@"GGDatePicker" owner:self options:nil];
         self=tempNib[0];
         self.frame=frame;
+        
+        
+        self.datePicker.backgroundColor=GGRGB(234, 255, 243);
+        
         [self initDatePickerView];
     }
     return self;
@@ -89,9 +93,10 @@
 
 - (IBAction)clickItem:(UIBarButtonItem *)sender {
    
+    self.hidden=YES;
     if (sender.tag==1) {
          //取消
-        self.hidden=YES;
+       
     }else{
         //确定
         NSString *selectDateStr=[NSString stringWithFormat:@"%@-%@-%@",[yearArray objectAtIndex:selectedYearRow],[currenMonthArray objectAtIndex:selectedMonthRow],[daysArray objectAtIndex:selectedDayRow]];
@@ -99,8 +104,8 @@
         if ([self.delegate respondsToSelector:@selector(datePickerView:selectDateStr:)]) {
             [self.delegate datePickerView:self selectDateStr:selectDateStr];
         }
-        self.hidden=YES;
     }
+    [self removeFromSuperview];
 }
 
 //选中时
@@ -166,7 +171,7 @@
         CGRect frame = CGRectMake(0.0, 0.0, 50, 60);
         pickerLabel = [[UILabel alloc] initWithFrame:frame];
         [pickerLabel setTextAlignment:NSTextAlignmentCenter];
-        [pickerLabel setBackgroundColor:[UIColor clearColor]];
+//        [pickerLabel setBackgroundColor:[UIColor clearColor]];
         [pickerLabel setFont:[UIFont systemFontOfSize:18.0f]];
     }
     if (component == 0){

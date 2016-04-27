@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "DateSelectView.h"
 
-@interface DateTestViewController : UIViewController<DateSelectViewDelegate>
+#import "GGColumnView.h"
+#import "GGBlockColumnView.h"
+
+
+@interface DateTestViewController : UIViewController<DateSelectViewDelegate,GGColumeViewDelegate,GGBlockColumnViewDelegate>
 
 @end

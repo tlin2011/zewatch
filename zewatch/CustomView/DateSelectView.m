@@ -14,6 +14,8 @@
     NSDate *currenDate;             //当前显示的时间   周  月 为第一天
     int  currentDateIndex;          //距离今天的相隔天数，
     NSInteger  currentWeek;         //当天为周几
+    
+    GGDatePicker *picker;
 }
 
 -(instancetype)initWithPosition:(CGPoint)point dateType:(DateSelectType)dateType delegate:(nullable id<DateSelectViewDelegate>)paramDelegate{
@@ -31,6 +33,11 @@
     return self;
 }
 
+//切换日期控件类型
+-(void)switchToType:(DateSelectType)toSelectType{
+    selectDateType=toSelectType;
+    [self showDateMsg];
+}
 
 // 前翻  后翻 事件
 - (IBAction)clickChangePage:(UIButton *)sender {
@@ -88,9 +95,14 @@
 }
 
 - (IBAction)clickSelectDate:(UIButton *)sender{
-    GGDatePicker *picker=[[GGDatePicker alloc] initDatePicker];
-    picker.delegate=self;
-    [self.superview addSubview:picker];
+    
+    if (!picker) {
+        picker=[[GGDatePicker alloc] initDatePicker];
+        picker.delegate=self;
+    }
+    picker.hidden=NO;
+    [[[UIApplication sharedApplication].delegate window] addSubview:picker];
+    
 }
 
 //选中日期代理

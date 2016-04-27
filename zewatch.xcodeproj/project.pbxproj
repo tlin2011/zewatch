@@ -18,6 +18,8 @@
 		BF0A0F901CB3B49D00B9D403 /* NSDate+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0A0F8F1CB3B49D00B9D403 /* NSDate+Utilities.m */; };
 		BF0A0F931CB3BBDA00B9D403 /* GGDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0A0F921CB3BBDA00B9D403 /* GGDatePicker.m */; };
 		BF0A0F951CB3BBF600B9D403 /* GGDatePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF0A0F941CB3BBF600B9D403 /* GGDatePicker.xib */; };
+		BF122BC61CCF5A2900A614D5 /* GGBlockColumnView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF122BC51CCF5A2900A614D5 /* GGBlockColumnView.m */; };
+		BF122BC91CCF5F1600A614D5 /* BlockColumnModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF122BC81CCF5F1600A614D5 /* BlockColumnModel.m */; };
 		BF3C62D51C5CD2A000B25252 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3C62D41C5CD2A000B25252 /* main.m */; };
 		BF3C62DE1C5CD2A000B25252 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF3C62DC1C5CD2A000B25252 /* Main.storyboard */; };
 		BF3C62E01C5CD2A000B25252 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF3C62DF1C5CD2A000B25252 /* Assets.xcassets */; };
@@ -25,9 +27,16 @@
 		BF3C62EE1C5CD2A000B25252 /* zewatchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3C62ED1C5CD2A000B25252 /* zewatchTests.m */; };
 		BF3C62F91C5CD2A000B25252 /* zewatchUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3C62F81C5CD2A000B25252 /* zewatchUITests.m */; };
 		BF3C630A1C5CDA9800B25252 /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3C63091C5CDA9800B25252 /* ActivityViewController.m */; };
+		BF43454A1CBE1C120077EA0B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF4345491CBE1C120077EA0B /* QuartzCore.framework */; };
+		BF5AD1541CBB8C2900DF69DF /* GGBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5AD1531CBB8C2900DF69DF /* GGBaseViewController.m */; };
+		BF5AD1571CBB989500DF69DF /* GGColumnView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5AD1561CBB989500DF69DF /* GGColumnView.m */; };
 		BF6D5CDB1C60733F00AF22BA /* GoalSettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6D5CDA1C60733F00AF22BA /* GoalSettingTableViewController.m */; };
 		BF790FC01C5CE2B400377742 /* ZeWatchAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF790FBF1C5CE2B400377742 /* ZeWatchAppDelegate.m */; };
 		BF790FC41C5CE97500377742 /* activity_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = BF790FC31C5CE97500377742 /* activity_bg.png */; };
+		BF86100B1CBF4A100060E897 /* ProcessStateView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF86100A1CBF4A100060E897 /* ProcessStateView.m */; };
+		BF86100F1CBF7BDB0060E897 /* SportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF86100E1CBF7BDB0060E897 /* SportViewController.m */; };
+		BFBA84051CC0B8E500FE823D /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BFBA84031CC0B8E500FE823D /* Icon.png */; };
+		BFBA84061CC0B8E500FE823D /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFBA84041CC0B8E500FE823D /* Icon@2x.png */; };
 		BFE7C2EC1C6078E9008A5719 /* icon_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = BFE7C2EB1C6078E9008A5719 /* icon_logo.png */; };
 		BFE7C2F11C608B6E008A5719 /* ActivityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE7C2EF1C608B6E008A5719 /* ActivityTableViewCell.m */; };
 		BFE7C2F21C608B6E008A5719 /* ActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFE7C2F01C608B6E008A5719 /* ActivityTableViewCell.xib */; };
@@ -68,6 +77,10 @@
 		BF0A0F911CB3BBDA00B9D403 /* GGDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGDatePicker.h; sourceTree = "<group>"; };
 		BF0A0F921CB3BBDA00B9D403 /* GGDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGDatePicker.m; sourceTree = "<group>"; };
 		BF0A0F941CB3BBF600B9D403 /* GGDatePicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GGDatePicker.xib; sourceTree = "<group>"; };
+		BF122BC41CCF5A2900A614D5 /* GGBlockColumnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGBlockColumnView.h; sourceTree = "<group>"; };
+		BF122BC51CCF5A2900A614D5 /* GGBlockColumnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGBlockColumnView.m; sourceTree = "<group>"; };
+		BF122BC71CCF5F1600A614D5 /* BlockColumnModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockColumnModel.h; sourceTree = "<group>"; };
+		BF122BC81CCF5F1600A614D5 /* BlockColumnModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockColumnModel.m; sourceTree = "<group>"; };
 		BF3C62D01C5CD2A000B25252 /* zewatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zewatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF3C62D41C5CD2A000B25252 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BF3C62DD1C5CD2A000B25252 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -82,12 +95,23 @@
 		BF3C62FA1C5CD2A000B25252 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF3C63081C5CDA9800B25252 /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActivityViewController.h; path = zewatch/controller/home/ActivityViewController.h; sourceTree = SOURCE_ROOT; };
 		BF3C63091C5CDA9800B25252 /* ActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActivityViewController.m; path = zewatch/controller/home/ActivityViewController.m; sourceTree = SOURCE_ROOT; };
+		BF4345491CBE1C120077EA0B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		BF5AD1521CBB8C2900DF69DF /* GGBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGBaseViewController.h; sourceTree = "<group>"; };
+		BF5AD1531CBB8C2900DF69DF /* GGBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGBaseViewController.m; sourceTree = "<group>"; };
+		BF5AD1551CBB989500DF69DF /* GGColumnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGColumnView.h; sourceTree = "<group>"; };
+		BF5AD1561CBB989500DF69DF /* GGColumnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGColumnView.m; sourceTree = "<group>"; };
 		BF6D5CD91C60733F00AF22BA /* GoalSettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GoalSettingTableViewController.h; path = ../../../../../../../apple/Desktop/mykronoz/zewatch/zewatch/controller/home/GoalSettingTableViewController.h; sourceTree = "<group>"; };
 		BF6D5CDA1C60733F00AF22BA /* GoalSettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GoalSettingTableViewController.m; path = ../../../../../../../apple/Desktop/mykronoz/zewatch/zewatch/controller/home/GoalSettingTableViewController.m; sourceTree = "<group>"; };
 		BF790FBD1C5CDE0600377742 /* zewatch-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "zewatch-Prefix.pch"; sourceTree = "<group>"; };
 		BF790FBE1C5CE2B400377742 /* ZeWatchAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZeWatchAppDelegate.h; sourceTree = "<group>"; };
 		BF790FBF1C5CE2B400377742 /* ZeWatchAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZeWatchAppDelegate.m; sourceTree = "<group>"; };
 		BF790FC31C5CE97500377742 /* activity_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = activity_bg.png; sourceTree = "<group>"; };
+		BF8610091CBF4A100060E897 /* ProcessStateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcessStateView.h; sourceTree = "<group>"; };
+		BF86100A1CBF4A100060E897 /* ProcessStateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProcessStateView.m; sourceTree = "<group>"; };
+		BF86100D1CBF7BDB0060E897 /* SportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportViewController.h; sourceTree = "<group>"; };
+		BF86100E1CBF7BDB0060E897 /* SportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportViewController.m; sourceTree = "<group>"; };
+		BFBA84031CC0B8E500FE823D /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		BFBA84041CC0B8E500FE823D /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		BFE7C2EB1C6078E9008A5719 /* icon_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_logo.png; sourceTree = "<group>"; };
 		BFE7C2EE1C608B6E008A5719 /* ActivityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActivityTableViewCell.h; path = ../../../../../../apple/Desktop/mykronoz/zewatch/zewatch/CustomView/ActivityTableViewCell.h; sourceTree = "<group>"; };
 		BFE7C2EF1C608B6E008A5719 /* ActivityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActivityTableViewCell.m; path = ../../../../../../apple/Desktop/mykronoz/zewatch/zewatch/CustomView/ActivityTableViewCell.m; sourceTree = "<group>"; };
@@ -103,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF43454A1CBE1C120077EA0B /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +167,7 @@
 		BF3C62C71C5CD2A000B25252 = {
 			isa = PBXGroup;
 			children = (
+				BF4345491CBE1C120077EA0B /* QuartzCore.framework */,
 				BF3C62D21C5CD2A000B25252 /* zewatch */,
 				BF3C62EC1C5CD2A000B25252 /* zewatchTests */,
 				BF3C62F71C5CD2A000B25252 /* zewatchUITests */,
@@ -209,6 +235,7 @@
 		BF3C63061C5CDA8900B25252 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				BF5AD14E1CBB862400DF69DF /* base */,
 				BF3C63071C5CDA8900B25252 /* home */,
 			);
 			name = controller;
@@ -218,6 +245,7 @@
 		BF3C63071C5CDA8900B25252 /* home */ = {
 			isa = PBXGroup;
 			children = (
+				BF86100C1CBF7BC20060E897 /* sport */,
 				BF3C63081C5CDA9800B25252 /* ActivityViewController.h */,
 				BF3C63091C5CDA9800B25252 /* ActivityViewController.m */,
 				BF6D5CD91C60733F00AF22BA /* GoalSettingTableViewController.h */,
@@ -227,6 +255,16 @@
 			);
 			path = home;
 			sourceTree = "<group>";
+		};
+		BF5AD14E1CBB862400DF69DF /* base */ = {
+			isa = PBXGroup;
+			children = (
+				BF5AD1521CBB8C2900DF69DF /* GGBaseViewController.h */,
+				BF5AD1531CBB8C2900DF69DF /* GGBaseViewController.m */,
+			);
+			name = base;
+			path = zewatch/controller/base;
+			sourceTree = SOURCE_ROOT;
 		};
 		BF790FC11C5CE97500377742 /* Resource */ = {
 			isa = PBXGroup;
@@ -239,6 +277,8 @@
 		BF790FC21C5CE97500377742 /* ImageResource */ = {
 			isa = PBXGroup;
 			children = (
+				BFBA84031CC0B8E500FE823D /* Icon.png */,
+				BFBA84041CC0B8E500FE823D /* Icon@2x.png */,
 				BF0A0F6B1CB3700200B9D403 /* calendar.png */,
 				BF0A0F6C1CB3700200B9D403 /* calendar@2x.png */,
 				BF0A0F6D1CB3700200B9D403 /* calendar@3x.png */,
@@ -249,6 +289,16 @@
 			);
 			path = ImageResource;
 			sourceTree = "<group>";
+		};
+		BF86100C1CBF7BC20060E897 /* sport */ = {
+			isa = PBXGroup;
+			children = (
+				BF86100D1CBF7BDB0060E897 /* SportViewController.h */,
+				BF86100E1CBF7BDB0060E897 /* SportViewController.m */,
+			);
+			name = sport;
+			path = zewatch/controller/home/sport;
+			sourceTree = SOURCE_ROOT;
 		};
 		BFE7C2ED1C60893A008A5719 /* CustomView */ = {
 			isa = PBXGroup;
@@ -264,6 +314,12 @@
 				BF0A0F911CB3BBDA00B9D403 /* GGDatePicker.h */,
 				BF0A0F921CB3BBDA00B9D403 /* GGDatePicker.m */,
 				BF0A0F941CB3BBF600B9D403 /* GGDatePicker.xib */,
+				BF5AD1551CBB989500DF69DF /* GGColumnView.h */,
+				BF5AD1561CBB989500DF69DF /* GGColumnView.m */,
+				BF8610091CBF4A100060E897 /* ProcessStateView.h */,
+				BF86100A1CBF4A100060E897 /* ProcessStateView.m */,
+				BF122BC41CCF5A2900A614D5 /* GGBlockColumnView.h */,
+				BF122BC51CCF5A2900A614D5 /* GGBlockColumnView.m */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -273,6 +329,8 @@
 			children = (
 				BFE7C2F41C6096A8008A5719 /* ActivityModel.h */,
 				BFE7C2F51C6096A8008A5719 /* ActivityModel.m */,
+				BF122BC71CCF5F1600A614D5 /* BlockColumnModel.h */,
+				BF122BC81CCF5F1600A614D5 /* BlockColumnModel.m */,
 			);
 			path = CustomModel;
 			sourceTree = "<group>";
@@ -384,6 +442,7 @@
 				BF3C62E31C5CD2A000B25252 /* LaunchScreen.storyboard in Resources */,
 				BF0A0F951CB3BBF600B9D403 /* GGDatePicker.xib in Resources */,
 				BF0A0F6A1CB36F4800B9D403 /* preDate_off.png in Resources */,
+				BFBA84061CC0B8E500FE823D /* Icon@2x.png in Resources */,
 				BF0A0F6F1CB3700200B9D403 /* calendar@2x.png in Resources */,
 				BF0A0F691CB36F4800B9D403 /* nextDate_off.png in Resources */,
 				BF3C62E01C5CD2A000B25252 /* Assets.xcassets in Resources */,
@@ -392,6 +451,7 @@
 				BF0A0F661CB362A500B9D403 /* DateSelectView.xib in Resources */,
 				BF0A0F6E1CB3700200B9D403 /* calendar.png in Resources */,
 				BFE7C2F21C608B6E008A5719 /* ActivityTableViewCell.xib in Resources */,
+				BFBA84051CC0B8E500FE823D /* Icon.png in Resources */,
 				BF790FC41C5CE97500377742 /* activity_bg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,16 +477,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF122BC61CCF5A2900A614D5 /* GGBlockColumnView.m in Sources */,
 				BF0A0F5E1CB3573100B9D403 /* DateTestViewController.m in Sources */,
 				BF790FC01C5CE2B400377742 /* ZeWatchAppDelegate.m in Sources */,
 				BF3C630A1C5CDA9800B25252 /* ActivityViewController.m in Sources */,
 				BFE7C2F61C6096A8008A5719 /* ActivityModel.m in Sources */,
 				BFE7C2F91C60BB01008A5719 /* AppsCircleProView.m in Sources */,
 				BF6D5CDB1C60733F00AF22BA /* GoalSettingTableViewController.m in Sources */,
+				BF5AD1541CBB8C2900DF69DF /* GGBaseViewController.m in Sources */,
+				BF86100F1CBF7BDB0060E897 /* SportViewController.m in Sources */,
+				BF122BC91CCF5F1600A614D5 /* BlockColumnModel.m in Sources */,
+				BF86100B1CBF4A100060E897 /* ProcessStateView.m in Sources */,
 				BF3C62D51C5CD2A000B25252 /* main.m in Sources */,
 				BF0A0F931CB3BBDA00B9D403 /* GGDatePicker.m in Sources */,
 				BF0A0F901CB3B49D00B9D403 /* NSDate+Utilities.m in Sources */,
 				BF0A0F641CB361E900B9D403 /* DateSelectView.m in Sources */,
+				BF5AD1571CBB989500DF69DF /* GGColumnView.m in Sources */,
 				BFE7C2F11C608B6E008A5719 /* ActivityTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

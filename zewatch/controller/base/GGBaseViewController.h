@@ -10,4 +10,6 @@
 
 @interface GGBaseViewController : UIViewController
 
+@property(nonatomic,strong) UISegmentedControl  *segmentedControl;
+
 @end
