@@ -10,8 +10,7 @@
 
 //左边的间距
 #define  LEADING  12
-//view 的Y值
-#define  VIEW_Y        170
+
 //View  的高度
 #define  VIEW_HEIGHT   ([UIScreen mainScreen].bounds.size.height * 0.5)
 
@@ -42,8 +41,8 @@
     
 }
 
--(instancetype)initWithStyle:(GGColumnViewStyle)columnTyle delegate:(nullable id<GGColumeViewDelegate>)delegate{
-    CGRect frame=CGRectMake(0, VIEW_Y, SCREENWIDTH,VIEW_HEIGHT);
+-(instancetype)initWithStyle:(GGColumnViewStyle)columnTyle delegate:(nullable id<GGColumeViewDelegate>)delegate viewY:(CGFloat)valueY{
+    CGRect frame=CGRectMake(0, valueY, SCREENWIDTH,VIEW_HEIGHT);
     self=[super initWithFrame:frame];
     if (self) {
         currentStyle=columnTyle;
@@ -52,8 +51,6 @@
         
         [self initData];
         [self drawContent];
-        [self addDateIndex];
-        [self updateLineFrame];
     }
     return self;
 }
@@ -110,6 +107,11 @@
         [self addSubview:columnView];
         [allSubviewFrame addObject:[NSValue valueWithCGRect:rect]];
     }
+    
+    [self addDateIndex];
+    
+    [self updateLineFrame];
+    
 }
 
 //添加日期下标
@@ -280,5 +282,10 @@
         showTipLabel.hidden=YES;
     }
 }
+
+-(void)switchColumnType:(GGColumnViewStyle)type{
+    currentStyle = type;
+}
+
 
 @end

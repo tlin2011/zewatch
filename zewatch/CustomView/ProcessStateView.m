@@ -8,7 +8,6 @@
 
 #import "ProcessStateView.h"
 
-#define VIEW_Y   120
 #define VIEWHEIGHT   50
 
 @implementation ProcessStateView{
@@ -22,9 +21,9 @@
 }
 
 
--(instancetype)initWithValue:(NSString *)value Goal:(NSString *)goal unit:(NSString *)unit{
+-(instancetype)initWithValue:(NSString *)value Goal:(NSString *)goal unit:(NSString *)unit viewY:(CGFloat)valueY{
     
-    self=[super initWithFrame:CGRectMake(0,VIEW_Y, SCREENWIDTH, VIEWHEIGHT)];
+    self=[super initWithFrame:CGRectMake(0,valueY, SCREENWIDTH, VIEWHEIGHT)];
     
     if (self) {
         

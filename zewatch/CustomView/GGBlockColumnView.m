@@ -12,8 +12,6 @@
 
 //左边的间距
 #define  LEADING  12
-//view 的Y值
-#define  VIEW_Y        180
 //View  的高度
 #define  VIEW_HEIGHT   ([UIScreen mainScreen].bounds.size.height * 0.5)
 //线的Y值
@@ -28,17 +26,17 @@
     CGRect             buttomFrame;      //保存任意一个子控件位置， 为算底部说明图的位置
 }
 
--(instancetype)initWithDelegate:(nullable id<GGBlockColumnViewDelegate>)delegate{
+-(instancetype)initWithDelegate:(nullable id<GGBlockColumnViewDelegate>)delegate viewY:(CGFloat)valueY{
     
-    CGRect frame=CGRectMake(0, VIEW_Y, SCREENWIDTH,VIEW_HEIGHT);
+    CGRect frame=CGRectMake(0, valueY, SCREENWIDTH,VIEW_HEIGHT);
     self=[super initWithFrame:frame];
     if (self) {
         
         self.backgroundColor=[UIColor clearColor];
         self.delegate=delegate;
-        [self drawContent];
-        [self addBlockColumn];
         
+        [self drawContent];
+
         //[self updateLineFrame];
     }
     return self;
@@ -101,6 +99,8 @@
         [self addSubview:blockColumnView];
         buttomFrame=rect;
     }
+    
+    [self addBlockColumn];
 }
 
 //参数： 是否是开始时间
@@ -236,7 +236,7 @@
     
     CGFloat linex=line.frame.origin.x;
     
-    double timeIntervar=((linex - 2 * LEADING) / perMinute * 60);
+    double timeIntervar=((linex - 2 * LEADING) / perMinute * 60) + 60;
     
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -250,18 +250,11 @@
 
     showTipLabel.text=[NSString stringWithFormat:@"%dh%d",[dateArray[0] intValue],[dateArray[1] intValue]];
     
-//    if (isIntersects) {
-//        line.backgroundColor=intersectsColor;
-//        
-//        showTipLabel.text=[self.delegate intersectsShowTipBlockColumnView:self intersectsIndex:tag-100];
-//        
-////        NSLog(@"%@",NSStringFromCGRect(line.frame));
-//        
-//        showTipLabel.hidden=NO;
-//    }else{
-//        line.backgroundColor=intersectsColor;
-//        showTipLabel.hidden=YES;
-//    }
+    if (isIntersects) {
+        line.backgroundColor=intersectsColor;
+    }else{
+        line.backgroundColor=intersectsColor;
+    }
 }
 
 
@@ -306,6 +299,20 @@
     
     [tempView addSubview:label];
     return tempView;
+}
+
+
+/**
+ *  @author guotonglin
+ *
+ *  刷新
+ */
+-(void)reloadData{
+    
+    for (UIView *tempView in self.subviews) {
+        [tempView removeFromSuperview];
+    }
+    [self drawContent];
 }
 
 @end

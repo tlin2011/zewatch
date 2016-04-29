@@ -7,15 +7,14 @@
 //
 
 #import "DateSelectView.h"
-//#import "NSDate+Utilities.h"
+#import "NSDate+Utilities.h"
+#import "ActionSheetDatePicker.h"
 
 @implementation DateSelectView{
     DateSelectType selectDateType;  //要显示的日期类型
     NSDate *currenDate;             //当前显示的时间   周  月 为第一天
     int  currentDateIndex;          //距离今天的相隔天数，
     NSInteger  currentWeek;         //当天为周几
-    
-    GGDatePicker *picker;
 }
 
 -(instancetype)initWithPosition:(CGPoint)point dateType:(DateSelectType)dateType delegate:(nullable id<DateSelectViewDelegate>)paramDelegate{
@@ -96,14 +95,57 @@
 
 - (IBAction)clickSelectDate:(UIButton *)sender{
     
-    if (!picker) {
-        picker=[[GGDatePicker alloc] initDatePicker];
-        picker.delegate=self;
-    }
-    picker.hidden=NO;
-    [[[UIApplication sharedApplication].delegate window] addSubview:picker];
+    
+    ActionSheetDatePicker *actionSheetPicker =[[ActionSheetDatePicker alloc] initWithTitle:@""
+                                                                            datePickerMode:UIDatePickerModeDate
+                                                                              selectedDate:[NSDate date]
+                                                                               minimumDate:[NSDate dateFromString_yyyy_MM_dd:@"2014-12"]
+                                                                               maximumDate:[NSDate date]
+                                                                                    target:self
+                                                                                    action:@selector(dateWasSelected:element:)
+                                                                              cancelAction:nil origin:sender];
+    actionSheetPicker.locale = [NSDate currentLocale];
+    actionSheetPicker.calendar = [NSDate currentCalendar];
+    actionSheetPicker.hideCancel = NO;
+    [actionSheetPicker showActionSheetPicker];
     
 }
+
+//选择日期完成
+- (void)dateWasSelected:(NSDate *)selectedDate element:(id)element
+{
+
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+
+    
+    NSString *dateStr=[formatter stringFromDate:selectedDate];
+    
+    
+    
+    //选择完，把上一次选择清0
+    currentDateIndex=0;
+    
+    //距离今天多少天
+    NSInteger count = [self distanceInDaysToDate:dateStr];
+    
+    switch (selectDateType) {
+        case DateSelectTypeDay:
+            [self changeDayInfo:YES count:count];
+            break;
+        case DateSelectTypeWeek:
+            //转换成周
+            [self changeWeekInfo:YES count:count>currentWeek?(count-currentWeek-1)/7+1:0];
+            break;
+        case DateSelectTypeMonth:
+            [self changeMonthInfo:YES count:1 selectDateStr:dateStr];
+            break;
+        default:
+            break;
+    }
+
+}
+
 
 //选中日期代理
 -(void)datePickerView:(GGDatePicker *)date selectDateStr:(NSString *)dateStr{

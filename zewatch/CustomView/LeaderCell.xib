@@ -1,10 +1,123 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LeaderCell"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="leaderCell" selectionStyle="default" indentationWidth="10" rowHeight="67" id="mjn-s9-75O" customClass="LeaderCell">
+            <rect key="frame" x="0.0" y="0.0" width="348" height="67"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mjn-s9-75O" id="7FI-xn-Dyc">
+                <rect key="frame" x="0.0" y="0.0" width="348" height="66"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vOP-ni-43c">
+                        <rect key="frame" x="0.0" y="0.0" width="348" height="66"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Tnl-RW-eg6" userLabel="champion">
+                                <rect key="frame" x="10" y="5" width="36" height="56"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="36" id="EOv-gt-gSp"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="FQ9-64-4g1" userLabel="userIcon">
+                                <rect key="frame" x="61" y="5" width="20" height="56"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="Mwp-xG-wb2"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nikeName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uaE-vB-ciE">
+                                <rect key="frame" x="96" y="0.0" width="80" height="66"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.60721264140450937" green="0.66571401790375329" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="JlA-4c-puE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8J-JP-mWU">
+                                <rect key="frame" x="348" y="0.0" width="50" height="66"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="5LS-sb-fKn"/>
+                                </constraints>
+                                <state key="normal" title="DELETE"/>
+                                <connections>
+                                    <action selector="handleDelete:" destination="mjn-s9-75O" eventType="touchUpInside" id="Hvp-Kr-nXE"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sportdata" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6d-DP-ICf">
+                                <rect key="frame" x="186" y="8" width="100" height="58"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="5LD-4g-YRd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U5A-PQ-ahF">
+                                <rect key="frame" x="0.0" y="65" width="500" height="1"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.31369417069712446" green="0.33333333333333331" blue="0.090873635763937949" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="Jae-AE-1IR"/>
+                                    <constraint firstAttribute="width" constant="500" id="ZDy-gH-moY"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="p8J-JP-mWU" secondAttribute="trailing" constant="-50" id="7FU-NE-5i4"/>
+                            <constraint firstAttribute="bottom" secondItem="uaE-vB-ciE" secondAttribute="bottom" id="7cm-Vw-No0"/>
+                            <constraint firstAttribute="bottom" secondItem="E6d-DP-ICf" secondAttribute="bottom" id="8bb-0k-RZH"/>
+                            <constraint firstItem="Tnl-RW-eg6" firstAttribute="leading" secondItem="vOP-ni-43c" secondAttribute="leading" constant="10" id="LHW-aa-cyj"/>
+                            <constraint firstItem="uaE-vB-ciE" firstAttribute="leading" secondItem="FQ9-64-4g1" secondAttribute="trailing" constant="15" id="SWh-NC-qwP"/>
+                            <constraint firstAttribute="bottom" secondItem="p8J-JP-mWU" secondAttribute="bottom" id="Sng-Gv-HUr"/>
+                            <constraint firstItem="p8J-JP-mWU" firstAttribute="top" secondItem="vOP-ni-43c" secondAttribute="top" id="VJW-j9-aev"/>
+                            <constraint firstItem="E6d-DP-ICf" firstAttribute="top" secondItem="vOP-ni-43c" secondAttribute="top" constant="8" id="VTg-L6-TLB"/>
+                            <constraint firstAttribute="bottom" secondItem="FQ9-64-4g1" secondAttribute="bottom" constant="5" id="bpD-YJ-7ww"/>
+                            <constraint firstItem="uaE-vB-ciE" firstAttribute="top" secondItem="vOP-ni-43c" secondAttribute="top" id="e2i-4P-9yJ"/>
+                            <constraint firstAttribute="bottom" secondItem="U5A-PQ-ahF" secondAttribute="bottom" id="e80-ez-ZhB"/>
+                            <constraint firstItem="FQ9-64-4g1" firstAttribute="top" secondItem="vOP-ni-43c" secondAttribute="top" constant="5" id="egu-NA-Gxx"/>
+                            <constraint firstItem="U5A-PQ-ahF" firstAttribute="leading" secondItem="vOP-ni-43c" secondAttribute="leading" id="g8M-2Z-Rkd"/>
+                            <constraint firstItem="FQ9-64-4g1" firstAttribute="leading" secondItem="Tnl-RW-eg6" secondAttribute="trailing" constant="15" id="gS9-1p-FfY"/>
+                            <constraint firstItem="Tnl-RW-eg6" firstAttribute="top" secondItem="vOP-ni-43c" secondAttribute="top" constant="5" id="hr9-Og-zZb"/>
+                            <constraint firstItem="E6d-DP-ICf" firstAttribute="leading" secondItem="uaE-vB-ciE" secondAttribute="trailing" constant="10" id="rPT-e5-bIS"/>
+                            <constraint firstAttribute="bottom" secondItem="Tnl-RW-eg6" secondAttribute="bottom" constant="5" id="s11-nF-iM8"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="vOP-ni-43c" secondAttribute="trailing" id="Ha6-Lr-UUf"/>
+                    <constraint firstAttribute="bottom" secondItem="vOP-ni-43c" secondAttribute="bottom" id="U7h-jG-i1k"/>
+                    <constraint firstItem="vOP-ni-43c" firstAttribute="top" secondItem="7FI-xn-Dyc" secondAttribute="top" id="YW3-Jt-FMw"/>
+                    <constraint firstItem="vOP-ni-43c" firstAttribute="leading" secondItem="7FI-xn-Dyc" secondAttribute="leading" id="pdO-h9-xiS"/>
+                </constraints>
+            </tableViewCellContentView>
+            <animations/>
+            <gestureRecognizers/>
+            <connections>
+                <outlet property="championImageView" destination="Tnl-RW-eg6" id="jXN-jM-QMI"/>
+                <outlet property="deleteBtn" destination="p8J-JP-mWU" id="43O-rE-3ul"/>
+                <outlet property="nikeNameLabel" destination="uaE-vB-ciE" id="14O-0d-PUE"/>
+                <outlet property="parentView" destination="vOP-ni-43c" id="eo2-0f-vPh"/>
+                <outlet property="sportDataLabel" destination="E6d-DP-ICf" id="o4Y-zC-xfx"/>
+                <outlet property="userIconImageView" destination="FQ9-64-4g1" id="asJ-Pl-pZF"/>
+            </connections>
+            <point key="canvasLocation" x="543" y="226.5"/>
+        </tableViewCell>
     </objects>
+    <resources>
+        <image name="Icon.png" width="57" height="57"/>
+    </resources>
 </document>

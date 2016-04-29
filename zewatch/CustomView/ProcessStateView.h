@@ -10,7 +10,7 @@
 
 @interface ProcessStateView : UIView
 
--(instancetype)initWithValue:(NSString *)value Goal:(NSString *)goal unit:(NSString *)unit;
+-(instancetype)initWithValue:(NSString *)value Goal:(NSString *)goal unit:(NSString *)unit viewY:(CGFloat)valueY;
 
 /**
  *  @author guotonglin

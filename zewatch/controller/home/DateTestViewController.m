@@ -102,7 +102,7 @@
     
     
     
-    GGBlockColumnView *view=[[GGBlockColumnView alloc] initWithDelegate:self];
+    GGBlockColumnView *view=[[GGBlockColumnView alloc] initWithDelegate:self viewY:120];
     
     [self.view addSubview:view];
     

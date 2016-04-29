@@ -32,6 +32,9 @@
 
 @property(nonatomic,assign)id<GGBlockColumnViewDelegate> delegate;
 
--(instancetype)initWithDelegate:(nullable id<GGBlockColumnViewDelegate>)delegate;
+-(instancetype)initWithDelegate:(nullable id<GGBlockColumnViewDelegate>)delegate viewY:(CGFloat)valueY;
+
+
+-(void)reloadData;
 
 @end

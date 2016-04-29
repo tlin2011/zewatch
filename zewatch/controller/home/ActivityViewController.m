@@ -10,6 +10,7 @@
 #import "ActivityTableViewCell.h"
 #import "AppsCircleProView.h"
 #import "SportViewController.h"
+#import "SleepViewController.h"
 
 
 
@@ -30,8 +31,7 @@
 
 -(void)initTableView{
     
-    
-    self.tableView.scrollEnabled=NO;
+
     self.view.backgroundColor=[UIColor whiteColor];
     
     UILabel *titleLabel=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 30, 20)];
@@ -51,33 +51,46 @@
     UIButton *leftItem=[[UIButton alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
     [leftItem setBackgroundImage:[UIImage imageNamed:@"icon_logo"] forState:UIControlStateNormal];
     
-    
-  
-    UIView *headView=[[UIView alloc] initWithFrame:CGRectMake(0, 0,SCREENHEIGHT,80)];
+    UIView *headView=[[UIView alloc] initWithFrame:CGRectMake(0, 0,SCREENWIDTH,200)];
     headView.backgroundColor=[UIColor whiteColor];
     
-    //可能要画圆
+
+    
+    NSArray *array=[NSArray arrayWithObjects:@(0.5),@(0.3),@(0.7),@(0.3),@(0.7),nil];
+    
     //圆半径
-//    CGFloat circleRadius=100;
-//    AppsCircleProView *circlePro=[[AppsCircleProView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2-circleRadius/2, 20, circleRadius,circleRadius)];
-//    circlePro.trackColor = [UIColor blackColor];
-//    circlePro.progressColor = [UIColor yellowColor];
-//    circlePro.progress = 0.6;
-//    circlePro.backgroundColor=[UIColor greenColor];
-//    [headView addSubview:circlePro];
+    CGFloat circleRadius=150;
+    CGFloat y= 60;
     
+    CGFloat x= self.view.frame.size.width/2-circleRadius/2;
+    CGFloat w= circleRadius;
     
-    DateSelectView *dateSelectView=[[DateSelectView alloc] initWithPosition:CGPointMake(0, 0) dateType:DateSelectTypeDay delegate:self];    
+    CGFloat tempx;
+    CGFloat tempy;
+    CGFloat tempw;
+    CGFloat temph;
     
+    for (int i=0; i<array.count; i++) {
+        
+        tempx = x + i * PROGRESSWIDTH;
+        tempy = y + i * PROGRESSWIDTH;
+        tempw = w - 2 * i * PROGRESSWIDTH;
+        temph = w - 2 * i * PROGRESSWIDTH;
+        
+        AppsCircleProView *circlePro=[[AppsCircleProView alloc] initWithFrame:CGRectMake(tempx, tempy, tempw,temph)];
+        circlePro.trackColor = [UIColor blackColor];
+        circlePro.progressColor = [UIColor yellowColor];
+        circlePro.progress = [array[i] floatValue];
+        [headView addSubview:circlePro];
+    }
+    
+    DateSelectView *dateSelectView=[[DateSelectView alloc] initWithPosition:CGPointMake(0, 0) dateType:DateSelectTypeDay delegate:self];
     [self.view addSubview:dateSelectView];
     [headView addSubview:dateSelectView];
     
     self.tableView.tableHeaderView=headView;
     self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc] initWithCustomView:rightItem];
     self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc] initWithCustomView:leftItem];
-    
-    
-
     
 }
 
@@ -131,11 +144,7 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-//    ActivityTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"activityCell"];
-//    
-//    cell.selectionStyle=UITableViewCellSelectionStyleNone;
-    
+        
     
     UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"mycell"];
     
@@ -176,22 +185,22 @@
     
     [cell.contentView addSubview:textLabel];
     
-//    cell.moduleName.text=@"9iu";
-//    cell.moduleValue.text=@"100";
-//    cell.moduleUnit.text=@"Step";
-//    cell.goalName.text=@"300";
-//    cell.goalValue.text=@"50";
-//    cell.golaUnit.text=@"Step";
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
 }
 
-
-
-
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    SportViewController *sportController=[[SportViewController alloc] init];
-    [self.navigationController pushViewController:sportController animated:YES];
+    
+    if (indexPath.section ==3) {
+        SleepViewController *sleepController=[[SleepViewController alloc] init];
+        [self.navigationController pushViewController:sleepController animated:YES];
+
+    }else{
+        SportViewController *sportController=[[SportViewController alloc] init];
+        [self.navigationController pushViewController:sportController animated:YES];
+    }
+
 }
 
 @end

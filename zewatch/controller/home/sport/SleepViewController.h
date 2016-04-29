@@ -8,6 +8,13 @@
 
 #import "GGBaseViewController.h"
 
-@interface SleepViewController : GGBaseViewController
+#import "GGBlockColumnView.h"
+
+#import "DateSelectView.h"
+
+#import "GGColumnView.h"
+
+
+@interface SleepViewController : GGBaseViewController<GGBlockColumnViewDelegate,GGColumeViewDelegate,DateSelectViewDelegate>
 
 @end

@@ -42,8 +42,10 @@ typedef enum {
 
 @property(nonatomic,assign)id<GGColumeViewDelegate> delegate;
 
--(instancetype)initWithStyle:(GGColumnViewStyle)columnTyle delegate:(nullable id<GGColumeViewDelegate>)delegate;
+-(instancetype)initWithStyle:(GGColumnViewStyle)columnTyle delegate:(nullable id<GGColumeViewDelegate>)delegate viewY:(CGFloat)valueY;
 
 -(void)reloadData;
+
+-(void)switchColumnType:(GGColumnViewStyle)type;
 
 @end

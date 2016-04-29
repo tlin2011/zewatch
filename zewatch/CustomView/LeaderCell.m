@@ -10,4 +10,9 @@
 
 @implementation LeaderCell
 
+- (IBAction)handleDelete:(UIButton *)sender {
+    
+}
+
+
 @end

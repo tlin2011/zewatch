@@ -24,6 +24,8 @@
     NSInteger            selectedMonthRow;
     NSInteger            selectedDayRow;
     
+    BOOL            isSelectIng;
+    
 }
 
 -(instancetype)initDatePicker{
@@ -98,36 +100,81 @@
          //取消
        
     }else{
-        //确定
-        NSString *selectDateStr=[NSString stringWithFormat:@"%@-%@-%@",[yearArray objectAtIndex:selectedYearRow],[currenMonthArray objectAtIndex:selectedMonthRow],[daysArray objectAtIndex:selectedDayRow]];
         
-        if ([self.delegate respondsToSelector:@selector(datePickerView:selectDateStr:)]) {
-            [self.delegate datePickerView:self selectDateStr:selectDateStr];
-        }
+        [self performSelector:@selector(delayMethod) withObject:nil afterDelay:0.5];
+        
     }
+    
     [self removeFromSuperview];
+}
+
+-(void)delayMethod{
+    
+    if (isSelectIng) {
+        return;
+    }
+    
+    selectedYearRow= [self.datePicker selectedRowInComponent:0];
+    selectedMonthRow= [self.datePicker selectedRowInComponent:1];
+    selectedDayRow= [self.datePicker selectedRowInComponent:2];
+    
+    
+    
+    //确定
+    NSString *selectDateStr=[NSString stringWithFormat:@"%@-%@-%@",[yearArray objectAtIndex:selectedYearRow],[[currenMonthArray objectAtIndex:selectedMonthRow] intValue]>9?[currenMonthArray objectAtIndex:selectedMonthRow]:[NSString stringWithFormat:@"0%@",[currenMonthArray objectAtIndex:selectedMonthRow]],[[daysArray objectAtIndex:selectedDayRow] intValue]>9?[daysArray objectAtIndex:selectedDayRow] :[NSString stringWithFormat:@"0%@",[daysArray objectAtIndex:selectedDayRow]]];
+    
+//    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+//    [formatter setDateFormat:@"yyyy-MM-dd"];
+//    
+////    NSString *da=@"2016-04-28";
+//    
+//    NSDate *selectDate=[formatter dateFromString:selectDateStr];
+//    
+//    NSString *nowDateStr=[formatter stringFromDate:[NSDate date]];
+//    
+//     NSDate *nowDate=[formatter dateFromString:nowDateStr];
+//    
+//    NSTimeInterval interval=[selectDate timeIntervalSinceDate:nowDate];
+//    
+//    if (interval > 0) {
+//        
+//        selectDateStr=nowDateStr;
+//        selectedYearRow=yearArray.count-1;
+//        selectedMonthRow=monthArray.count-1;
+//        selectedDayRow=currenDaysArray.count-1;
+//    }
+//    
+    
+    if ([self.delegate respondsToSelector:@selector(datePickerView:selectDateStr:)]) {
+        [self.delegate datePickerView:self selectDateStr:selectDateStr];
+    }
 }
 
 //选中时
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
+    
+    isSelectIng=YES;
     //选中年 和  月 刷新对应的周
     if (component == 0)
     {
-        selectedYearRow = row;
-        [self.datePicker reloadAllComponents];
+        [self.datePicker reloadComponent:1];
+        [self.datePicker reloadComponent:2];
     }
     else if (component == 1)
     {
-        selectedMonthRow = row;
-        [self.datePicker reloadAllComponents];
+        [self.datePicker reloadComponent:2];
     }
     else if (component == 2)
     {
-        selectedDayRow = row;
-        [self.datePicker reloadAllComponents];
+         [self.datePicker reloadComponent:2];
     }
+    
+    isSelectIng=NO;
+
 }
+
+
 
 //显示多少组
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
@@ -136,12 +183,18 @@
 }
 
 // 每组多少行
+//此处遗留问题，当年 和 月 选择第一项时，会出现问题
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
     if (component==0) {
         return  yearArray.count;
     }else if (component==1){
         NSInteger selectYear =  [pickerView selectedRowInComponent:0];
+//         NSLog(@"%ld---",(long)selectYear);
+        
+         if (selectYear == 0) {
+              return monthArray.count;
+         }
         //如果是当前年份
         if ((currenYear-1970)==selectYear) {
             return  monthArray.count;
@@ -150,6 +203,12 @@
     }else{
         NSInteger selectYear =  [pickerView selectedRowInComponent:0];
         NSInteger selectMonth =  [pickerView selectedRowInComponent:1];
+        
+        if (selectYear == 0  && selectMonth==0) {
+             return currentDay;
+        }
+        
+//        NSLog(@"%ld---%ld",(long)selectYear,(long)selectMonth);
         //当年  当月
         if ((currenYear-1970)==selectYear && (selectMonth+1)==currentMonth) {
             return currentDay;
