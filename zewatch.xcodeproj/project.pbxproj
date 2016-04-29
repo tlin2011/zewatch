@@ -18,6 +18,16 @@
 		BF0A0F901CB3B49D00B9D403 /* NSDate+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0A0F8F1CB3B49D00B9D403 /* NSDate+Utilities.m */; };
 		BF0A0F931CB3BBDA00B9D403 /* GGDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0A0F921CB3BBDA00B9D403 /* GGDatePicker.m */; };
 		BF0A0F951CB3BBF600B9D403 /* GGDatePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF0A0F941CB3BBF600B9D403 /* GGDatePicker.xib */; };
+		BF104B541CD1E9E400BAEDF5 /* AbstractActionSheetPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = BF104B431CD1E9E400BAEDF5 /* AbstractActionSheetPicker.m */; };
+		BF104B551CD1E9E400BAEDF5 /* ActionSheetCustomPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = BF104B451CD1E9E400BAEDF5 /* ActionSheetCustomPicker.m */; };
+		BF104B561CD1E9E400BAEDF5 /* ActionSheetDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = BF104B481CD1E9E400BAEDF5 /* ActionSheetDatePicker.m */; };
+		BF104B571CD1E9E400BAEDF5 /* ActionSheetDistancePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = BF104B4A1CD1E9E400BAEDF5 /* ActionSheetDistancePicker.m */; };
+		BF104B581CD1E9E400BAEDF5 /* ActionSheetLocalePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = BF104B4C1CD1E9E400BAEDF5 /* ActionSheetLocalePicker.m */; };
+		BF104B591CD1E9E400BAEDF5 /* ActionSheetStringPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = BF104B4F1CD1E9E400BAEDF5 /* ActionSheetStringPicker.m */; };
+		BF104B5A1CD1E9E400BAEDF5 /* DistancePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF104B511CD1E9E400BAEDF5 /* DistancePickerView.m */; };
+		BF104B5B1CD1E9E400BAEDF5 /* SWActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = BF104B531CD1E9E400BAEDF5 /* SWActionSheet.m */; };
+		BF104B5E1CD1F0E900BAEDF5 /* LeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF104B5D1CD1F0E900BAEDF5 /* LeaderCell.m */; };
+		BF104B601CD1F10500BAEDF5 /* LeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF104B5F1CD1F10500BAEDF5 /* LeaderCell.xib */; };
 		BF122BC61CCF5A2900A614D5 /* GGBlockColumnView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF122BC51CCF5A2900A614D5 /* GGBlockColumnView.m */; };
 		BF122BC91CCF5F1600A614D5 /* BlockColumnModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF122BC81CCF5F1600A614D5 /* BlockColumnModel.m */; };
 		BF3C62D51C5CD2A000B25252 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3C62D41C5CD2A000B25252 /* main.m */; };
@@ -27,6 +37,7 @@
 		BF3C62EE1C5CD2A000B25252 /* zewatchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3C62ED1C5CD2A000B25252 /* zewatchTests.m */; };
 		BF3C62F91C5CD2A000B25252 /* zewatchUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3C62F81C5CD2A000B25252 /* zewatchUITests.m */; };
 		BF3C630A1C5CDA9800B25252 /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3C63091C5CDA9800B25252 /* ActivityViewController.m */; };
+		BF3C6D501CD2ECD900D26D58 /* SleepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3C6D4F1CD2ECD900D26D58 /* SleepViewController.m */; };
 		BF43454A1CBE1C120077EA0B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF4345491CBE1C120077EA0B /* QuartzCore.framework */; };
 		BF5AD1541CBB8C2900DF69DF /* GGBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5AD1531CBB8C2900DF69DF /* GGBaseViewController.m */; };
 		BF5AD1571CBB989500DF69DF /* GGColumnView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5AD1561CBB989500DF69DF /* GGColumnView.m */; };
@@ -77,6 +88,27 @@
 		BF0A0F911CB3BBDA00B9D403 /* GGDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGDatePicker.h; sourceTree = "<group>"; };
 		BF0A0F921CB3BBDA00B9D403 /* GGDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGDatePicker.m; sourceTree = "<group>"; };
 		BF0A0F941CB3BBF600B9D403 /* GGDatePicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GGDatePicker.xib; sourceTree = "<group>"; };
+		BF104B421CD1E9E400BAEDF5 /* AbstractActionSheetPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractActionSheetPicker.h; sourceTree = "<group>"; };
+		BF104B431CD1E9E400BAEDF5 /* AbstractActionSheetPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractActionSheetPicker.m; sourceTree = "<group>"; };
+		BF104B441CD1E9E400BAEDF5 /* ActionSheetCustomPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetCustomPicker.h; sourceTree = "<group>"; };
+		BF104B451CD1E9E400BAEDF5 /* ActionSheetCustomPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetCustomPicker.m; sourceTree = "<group>"; };
+		BF104B461CD1E9E400BAEDF5 /* ActionSheetCustomPickerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetCustomPickerDelegate.h; sourceTree = "<group>"; };
+		BF104B471CD1E9E400BAEDF5 /* ActionSheetDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetDatePicker.h; sourceTree = "<group>"; };
+		BF104B481CD1E9E400BAEDF5 /* ActionSheetDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetDatePicker.m; sourceTree = "<group>"; };
+		BF104B491CD1E9E400BAEDF5 /* ActionSheetDistancePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetDistancePicker.h; sourceTree = "<group>"; };
+		BF104B4A1CD1E9E400BAEDF5 /* ActionSheetDistancePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetDistancePicker.m; sourceTree = "<group>"; };
+		BF104B4B1CD1E9E400BAEDF5 /* ActionSheetLocalePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetLocalePicker.h; sourceTree = "<group>"; };
+		BF104B4C1CD1E9E400BAEDF5 /* ActionSheetLocalePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetLocalePicker.m; sourceTree = "<group>"; };
+		BF104B4D1CD1E9E400BAEDF5 /* ActionSheetPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetPicker.h; sourceTree = "<group>"; };
+		BF104B4E1CD1E9E400BAEDF5 /* ActionSheetStringPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetStringPicker.h; sourceTree = "<group>"; };
+		BF104B4F1CD1E9E400BAEDF5 /* ActionSheetStringPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetStringPicker.m; sourceTree = "<group>"; };
+		BF104B501CD1E9E400BAEDF5 /* DistancePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistancePickerView.h; sourceTree = "<group>"; };
+		BF104B511CD1E9E400BAEDF5 /* DistancePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistancePickerView.m; sourceTree = "<group>"; };
+		BF104B521CD1E9E400BAEDF5 /* SWActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWActionSheet.h; sourceTree = "<group>"; };
+		BF104B531CD1E9E400BAEDF5 /* SWActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWActionSheet.m; sourceTree = "<group>"; };
+		BF104B5C1CD1F0E900BAEDF5 /* LeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeaderCell.h; sourceTree = "<group>"; };
+		BF104B5D1CD1F0E900BAEDF5 /* LeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeaderCell.m; sourceTree = "<group>"; };
+		BF104B5F1CD1F10500BAEDF5 /* LeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeaderCell.xib; sourceTree = "<group>"; };
 		BF122BC41CCF5A2900A614D5 /* GGBlockColumnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGBlockColumnView.h; sourceTree = "<group>"; };
 		BF122BC51CCF5A2900A614D5 /* GGBlockColumnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGBlockColumnView.m; sourceTree = "<group>"; };
 		BF122BC71CCF5F1600A614D5 /* BlockColumnModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockColumnModel.h; sourceTree = "<group>"; };
@@ -95,6 +127,8 @@
 		BF3C62FA1C5CD2A000B25252 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF3C63081C5CDA9800B25252 /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActivityViewController.h; path = zewatch/controller/home/ActivityViewController.h; sourceTree = SOURCE_ROOT; };
 		BF3C63091C5CDA9800B25252 /* ActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActivityViewController.m; path = zewatch/controller/home/ActivityViewController.m; sourceTree = SOURCE_ROOT; };
+		BF3C6D4E1CD2ECD900D26D58 /* SleepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SleepViewController.h; sourceTree = "<group>"; };
+		BF3C6D4F1CD2ECD900D26D58 /* SleepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SleepViewController.m; sourceTree = "<group>"; };
 		BF4345491CBE1C120077EA0B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BF5AD1521CBB8C2900DF69DF /* GGBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGBaseViewController.h; sourceTree = "<group>"; };
 		BF5AD1531CBB8C2900DF69DF /* GGBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGBaseViewController.m; sourceTree = "<group>"; };
@@ -148,13 +182,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BF0A0F711CB3B29900B9D403 /* Third */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Third;
-			sourceTree = "<group>";
-		};
 		BF0A0F8D1CB3B49D00B9D403 /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +189,39 @@
 				BF0A0F8F1CB3B49D00B9D403 /* NSDate+Utilities.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		BF104B401CD1E9E400BAEDF5 /* Third */ = {
+			isa = PBXGroup;
+			children = (
+				BF104B411CD1E9E400BAEDF5 /* ActionSheetPicker */,
+			);
+			path = Third;
+			sourceTree = "<group>";
+		};
+		BF104B411CD1E9E400BAEDF5 /* ActionSheetPicker */ = {
+			isa = PBXGroup;
+			children = (
+				BF104B421CD1E9E400BAEDF5 /* AbstractActionSheetPicker.h */,
+				BF104B431CD1E9E400BAEDF5 /* AbstractActionSheetPicker.m */,
+				BF104B441CD1E9E400BAEDF5 /* ActionSheetCustomPicker.h */,
+				BF104B451CD1E9E400BAEDF5 /* ActionSheetCustomPicker.m */,
+				BF104B461CD1E9E400BAEDF5 /* ActionSheetCustomPickerDelegate.h */,
+				BF104B471CD1E9E400BAEDF5 /* ActionSheetDatePicker.h */,
+				BF104B481CD1E9E400BAEDF5 /* ActionSheetDatePicker.m */,
+				BF104B491CD1E9E400BAEDF5 /* ActionSheetDistancePicker.h */,
+				BF104B4A1CD1E9E400BAEDF5 /* ActionSheetDistancePicker.m */,
+				BF104B4B1CD1E9E400BAEDF5 /* ActionSheetLocalePicker.h */,
+				BF104B4C1CD1E9E400BAEDF5 /* ActionSheetLocalePicker.m */,
+				BF104B4D1CD1E9E400BAEDF5 /* ActionSheetPicker.h */,
+				BF104B4E1CD1E9E400BAEDF5 /* ActionSheetStringPicker.h */,
+				BF104B4F1CD1E9E400BAEDF5 /* ActionSheetStringPicker.m */,
+				BF104B501CD1E9E400BAEDF5 /* DistancePickerView.h */,
+				BF104B511CD1E9E400BAEDF5 /* DistancePickerView.m */,
+				BF104B521CD1E9E400BAEDF5 /* SWActionSheet.h */,
+				BF104B531CD1E9E400BAEDF5 /* SWActionSheet.m */,
+			);
+			path = ActionSheetPicker;
 			sourceTree = "<group>";
 		};
 		BF3C62C71C5CD2A000B25252 = {
@@ -188,8 +248,8 @@
 		BF3C62D21C5CD2A000B25252 /* zewatch */ = {
 			isa = PBXGroup;
 			children = (
+				BF104B401CD1E9E400BAEDF5 /* Third */,
 				BF0A0F8D1CB3B49D00B9D403 /* Category */,
-				BF0A0F711CB3B29900B9D403 /* Third */,
 				BFE7C2F31C609617008A5719 /* CustomModel */,
 				BFE7C2ED1C60893A008A5719 /* CustomView */,
 				BF3C63061C5CDA8900B25252 /* controller */,
@@ -295,6 +355,8 @@
 			children = (
 				BF86100D1CBF7BDB0060E897 /* SportViewController.h */,
 				BF86100E1CBF7BDB0060E897 /* SportViewController.m */,
+				BF3C6D4E1CD2ECD900D26D58 /* SleepViewController.h */,
+				BF3C6D4F1CD2ECD900D26D58 /* SleepViewController.m */,
 			);
 			name = sport;
 			path = zewatch/controller/home/sport;
@@ -320,6 +382,9 @@
 				BF86100A1CBF4A100060E897 /* ProcessStateView.m */,
 				BF122BC41CCF5A2900A614D5 /* GGBlockColumnView.h */,
 				BF122BC51CCF5A2900A614D5 /* GGBlockColumnView.m */,
+				BF104B5C1CD1F0E900BAEDF5 /* LeaderCell.h */,
+				BF104B5D1CD1F0E900BAEDF5 /* LeaderCell.m */,
+				BF104B5F1CD1F10500BAEDF5 /* LeaderCell.xib */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -450,6 +515,7 @@
 				BF0A0F701CB3700200B9D403 /* calendar@3x.png in Resources */,
 				BF0A0F661CB362A500B9D403 /* DateSelectView.xib in Resources */,
 				BF0A0F6E1CB3700200B9D403 /* calendar.png in Resources */,
+				BF104B601CD1F10500BAEDF5 /* LeaderCell.xib in Resources */,
 				BFE7C2F21C608B6E008A5719 /* ActivityTableViewCell.xib in Resources */,
 				BFBA84051CC0B8E500FE823D /* Icon.png in Resources */,
 				BF790FC41C5CE97500377742 /* activity_bg.png in Resources */,
@@ -478,20 +544,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF122BC61CCF5A2900A614D5 /* GGBlockColumnView.m in Sources */,
+				BF104B581CD1E9E400BAEDF5 /* ActionSheetLocalePicker.m in Sources */,
+				BF104B561CD1E9E400BAEDF5 /* ActionSheetDatePicker.m in Sources */,
+				BF104B5A1CD1E9E400BAEDF5 /* DistancePickerView.m in Sources */,
 				BF0A0F5E1CB3573100B9D403 /* DateTestViewController.m in Sources */,
+				BF104B5B1CD1E9E400BAEDF5 /* SWActionSheet.m in Sources */,
+				BF3C6D501CD2ECD900D26D58 /* SleepViewController.m in Sources */,
 				BF790FC01C5CE2B400377742 /* ZeWatchAppDelegate.m in Sources */,
 				BF3C630A1C5CDA9800B25252 /* ActivityViewController.m in Sources */,
 				BFE7C2F61C6096A8008A5719 /* ActivityModel.m in Sources */,
 				BFE7C2F91C60BB01008A5719 /* AppsCircleProView.m in Sources */,
 				BF6D5CDB1C60733F00AF22BA /* GoalSettingTableViewController.m in Sources */,
+				BF104B551CD1E9E400BAEDF5 /* ActionSheetCustomPicker.m in Sources */,
 				BF5AD1541CBB8C2900DF69DF /* GGBaseViewController.m in Sources */,
 				BF86100F1CBF7BDB0060E897 /* SportViewController.m in Sources */,
+				BF104B541CD1E9E400BAEDF5 /* AbstractActionSheetPicker.m in Sources */,
 				BF122BC91CCF5F1600A614D5 /* BlockColumnModel.m in Sources */,
 				BF86100B1CBF4A100060E897 /* ProcessStateView.m in Sources */,
 				BF3C62D51C5CD2A000B25252 /* main.m in Sources */,
+				BF104B5E1CD1F0E900BAEDF5 /* LeaderCell.m in Sources */,
 				BF0A0F931CB3BBDA00B9D403 /* GGDatePicker.m in Sources */,
 				BF0A0F901CB3B49D00B9D403 /* NSDate+Utilities.m in Sources */,
 				BF0A0F641CB361E900B9D403 /* DateSelectView.m in Sources */,
+				BF104B591CD1E9E400BAEDF5 /* ActionSheetStringPicker.m in Sources */,
+				BF104B571CD1E9E400BAEDF5 /* ActionSheetDistancePicker.m in Sources */,
 				BF5AD1571CBB989500DF69DF /* GGColumnView.m in Sources */,
 				BFE7C2F11C608B6E008A5719 /* ActivityTableViewCell.m in Sources */,
 			);
