@@ -108,14 +108,30 @@
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UIView *updateView=[[UIView alloc] initWithFrame:CGRectMake(0,0,SCREENWIDTH, 40)];
-    UILabel *label=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
-    label.text=@"我要升级啦！";
+    updateView.backgroundColor=GGRGB(40, 195, 160);
+    
+    UILabel *label=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 150, 40)];
+    label.text=@"New Update Available";
+    label.center = CGPointMake(SCREENWIDTH /2, 20);
+    label.adjustsFontSizeToFitWidth=YES;
+    label.textColor =[UIColor whiteColor];
     [updateView addSubview:label];
-    updateView.backgroundColor=[UIColor colorWithRed:40.0f/255.0f green:195.0f/255.0f blue:161.f/255.0f alpha:1];
+    
+    UIImageView *updateIconImageView=[[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetMinX(label.frame)-30, 8, 24, 24)];
+    updateIconImageView.image=[UIImage imageNamed:@"Icon.png"];
+    [updateView addSubview:updateIconImageView];
+    
+    UITapGestureRecognizer *tapGestureRecognizer=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapUpdateView)];
+    [updateView addGestureRecognizer:tapGestureRecognizer];
+    
     return  updateView;
 }
 
 
+#pragma  点击空中升级按钮
+-(void)tapUpdateView{
+    NSLog(@"click air update view");
+}
 
 
 #pragma mark 用于设置section 的间距
