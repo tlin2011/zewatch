@@ -55,7 +55,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLr-Fc-ldg">
-                    <rect key="frame" x="0.0" y="29" width="320" height="21"/>
+                    <rect key="frame" x="0.0" y="24" width="320" height="21"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="anc-Zp-03a"/>
@@ -78,7 +78,7 @@
                 <constraint firstItem="bLr-Fc-ldg" firstAttribute="leading" secondItem="KeN-Ts-udb" secondAttribute="leading" id="Q5M-9E-oYz"/>
                 <constraint firstItem="xsr-SK-GqQ" firstAttribute="leading" secondItem="KeN-Ts-udb" secondAttribute="leading" constant="90" id="RP5-da-pEb"/>
                 <constraint firstItem="SC5-Tp-5jR" firstAttribute="top" secondItem="KeN-Ts-udb" secondAttribute="top" constant="8" id="WcP-i2-JWw"/>
-                <constraint firstAttribute="bottom" secondItem="bLr-Fc-ldg" secondAttribute="bottom" id="cgN-pm-NdT"/>
+                <constraint firstAttribute="bottom" secondItem="bLr-Fc-ldg" secondAttribute="bottom" constant="5" id="cgN-pm-NdT"/>
                 <constraint firstAttribute="trailing" secondItem="145-Wf-WAb" secondAttribute="trailing" constant="89" id="jB2-he-5Ae"/>
                 <constraint firstAttribute="trailing" secondItem="5Pe-wH-0JR" secondAttribute="trailing" constant="65" id="o5u-K9-ohC"/>
                 <constraint firstItem="xsr-SK-GqQ" firstAttribute="top" secondItem="KeN-Ts-udb" secondAttribute="top" constant="8" id="oln-Uk-gHb"/>
@@ -89,7 +89,7 @@
                 <outlet property="dateDisplayLabel" destination="bLr-Fc-ldg" id="dX3-te-abt"/>
                 <outlet property="dateWeekBtn" destination="xsr-SK-GqQ" id="qoC-h4-9GJ"/>
             </connections>
-            <point key="canvasLocation" x="855" y="183"/>
+            <point key="canvasLocation" x="623" y="134"/>
         </view>
     </objects>
     <resources>

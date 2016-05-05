@@ -4,7 +4,9 @@
 //
 //  Created by guotonglin on 16/4/26.
 //  Copyright © 2016年 mykronoz. All rights reserved.
-//
+// 睡眠数据块的封装类，由代理告知数据源
+
+
 
 #import <UIKit/UIKit.h>
 

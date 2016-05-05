@@ -6,10 +6,16 @@
 //  Copyright © 2016年 mykronoz. All rights reserved.
 //
 
+/**
+ *
+ * 环形实现类，与业务逻辑 数据源解耦
+ *
+ */
+
 #import <UIKit/UIKit.h>
 
-
-#define  PROGRESSWIDTH 12
+//环形的宽度
+#define  PROGRESSWIDTH 10
 
 @interface AppsCircleProView : UIView
 @property (nonatomic, strong) UIColor *trackColor;    //底部的颜色

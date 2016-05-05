@@ -17,6 +17,18 @@
 
 #import "GGBlockColumnView.h"
 
+
+#import "GGBezierView.h"
+
+
+#import "GGSleepTypeView.h"
+
+#import "GGSleepTypePanelView.h"
+
+
+#import "GGSleepTypeModel.h"
+
+
 @interface DateTestViewController ()
 
 @end
@@ -28,16 +40,15 @@
     self.view.backgroundColor=[UIColor whiteColor];
     
     //日期选择三种控件
-//    DateSelectView *view=[[DateSelectView alloc] initWithPosition:CGPointMake(0, 65) dateType:DateSelectTypeDay delegate:self];
-//    
-//    [self.view addSubview:view];
+    DateSelectView *view=[[DateSelectView alloc] initWithPosition:CGPointMake(0, 65) dateType:DateSelectTypeDay delegate:self];
+    [self.view addSubview:view];
 //
 //    DateSelectView *view2=[[DateSelectView alloc] initWithPosition:CGPointMake(0, 180) dateType:DateSelectTypeWeek delegate:self];
 ////    [self.view addSubview:view2];
 //    
 //    DateSelectView *view3=[[DateSelectView alloc] initWithPosition:CGPointMake(0, 260) dateType:DateSelectTypeMonth delegate:self];
 //    [self.view addSubview:view3];
-//
+
 //    
 //    GGColumnView *columnView=[[GGColumnView alloc] initWithStyle:GGColumnViewStyleMonth delegate:self];
 //    
@@ -102,19 +113,53 @@
     
     
     
-    GGBlockColumnView *view=[[GGBlockColumnView alloc] initWithDelegate:self viewY:120];
+//    GGBlockColumnView *view=[[GGBlockColumnView alloc] initWithDelegate:self viewY:120];
+//    
+//    [self.view addSubview:view];
     
-    [self.view addSubview:view];
+    
+//    GGBezierView *bview=[[GGBezierView alloc] initWithFrame:CGRectMake(0, 0, 400, 400)];
+//    bview.backgroundColor=[UIColor blackColor];
+//    [self.view addSubview:bview];
+    
+    
+
+//
+//    GGSleepTypeView *sleepTypeView=[[GGSleepTypeView alloc] initWithFrame:CGRectMake(0, 125,SCREENWIDTH/2,(SCREENHEIGHT-y-40)/3)];
+//    sleepTypeView.backgroundColor=[UIColor redColor];
+//    sleepTypeView.sleepTypeName.adjustsFontSizeToFitWidth=YES;
+//    sleepTypeView.sleepTypeValue.adjustsFontSizeToFitWidth=YES;
+//    sleepTypeView.sleepTypeImage.backgroundColor=[UIColor blackColor];
+//    [self.view addSubview:sleepTypeView];
+
+    
+
+    
+    GGSleepTypeModel *s1=[[GGSleepTypeModel alloc] initWithImageName:@"Icon.png" sleepTypeName:@"Light Sleep" sleepTypeValue:@"4 h 10 min"];
+    
+    GGSleepTypeModel *s2=[[GGSleepTypeModel alloc] initWithImageName:@"Icon.png" sleepTypeName:@"Light Sleep" sleepTypeValue:@"4 h 10 min"];
+    
+    GGSleepTypeModel *s3=[[GGSleepTypeModel alloc] initWithImageName:@"Icon.png" sleepTypeName:@"Light Sleep" sleepTypeValue:@"4 h 10 min"];
+    
+        GGSleepTypeModel *s4=[[GGSleepTypeModel alloc] initWithImageName:@"Icon.png" sleepTypeName:@"Light Sleep" sleepTypeValue:@"4 h 10 min"];
+    
+        GGSleepTypeModel *s5=[[GGSleepTypeModel alloc] initWithImageName:@"Icon.png" sleepTypeName:@"Light Sleep" sleepTypeValue:@"4 h 10 min"];
+    
+        GGSleepTypeModel *s6=[[GGSleepTypeModel alloc] initWithImageName:@"Icon.png" sleepTypeName:@"Light Sleep" sleepTypeValue:@"4 h 10 min"];
+    
+    
+    NSArray *dataSource=[NSArray arrayWithObjects:s1,s2,s3,s4,s5,s6,nil];
+    //48 即下方TabBar 高度
+    GGSleepTypePanelView *sleepTypePanelView=[[GGSleepTypePanelView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(view.frame),SCREENWIDTH,(SCREENHEIGHT-CGRectGetMaxY(view.frame)-48))];
+    [sleepTypePanelView setDataSouce:dataSource];
+    [self.view addSubview:sleepTypePanelView];
     
 }
 
 
 
 //睡眠的代理
-
 -(NSString *)intersectsShowTipBlockColumnView:(GGBlockColumnView *)columnView intersectsIndex:(NSInteger)index{
-    
-    
     return @"hello ly";
     
 }

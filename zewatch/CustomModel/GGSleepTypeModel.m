@@ -10,4 +10,15 @@
 
 @implementation GGSleepTypeModel
 
+-(instancetype)initWithImageName:(NSString *)imageName sleepTypeName:(NSString *)sleepTypeName sleepTypeValue:(NSString *)sleepTypeValue{
+    self=[super init];
+    
+    if (self) {
+        self.sleepTypeImage = imageName;
+        self.sleepTypeName = sleepTypeName;
+        self.sleepTypeValue= sleepTypeValue;
+    }
+    return self;
+}
+
 @end

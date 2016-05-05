@@ -5,7 +5,7 @@
 //  Created by guotonglin on 16/4/11.
 //  Copyright © 2016年 mykronoz. All rights reserved.
 //
-//  数据图形化控件
+//  数据图形化控件，包含  天周月
 
 #import <UIKit/UIKit.h>
 
