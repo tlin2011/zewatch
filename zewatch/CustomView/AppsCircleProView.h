@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+
+#define  PROGRESSWIDTH 12
+
 @interface AppsCircleProView : UIView
 @property (nonatomic, strong) UIColor *trackColor;    //底部的颜色
 @property (nonatomic, strong) UIColor *progressColor;  //滚动条的颜色

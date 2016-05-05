@@ -8,17 +8,27 @@
 
 #import "AppsCircleProView.h"
 
+
+
+
 @implementation AppsCircleProView{
     CAShapeLayer *_trackLayer;
     UIBezierPath *_trackPath;
+    
     CAShapeLayer *_progressLayer;
     UIBezierPath *_progressPath;
+    
+    
+    CGPoint      circleCenter;
 }
 
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
+    
+    circleCenter = CGPointMake((frame.size.width /2), (frame.size.height /2));
+    
     if (self) {
         
         _trackLayer = [CAShapeLayer new];
@@ -35,7 +45,8 @@
         _progressLayer.frame = self.bounds;
         
         //默认5
-        self.progressWidth = 5;
+        self.progressWidth = PROGRESSWIDTH;
+       
     }
     return self;
 }
@@ -48,19 +59,21 @@
     _trackLayer.lineWidth = _progressWidth;
     _progressLayer.lineWidth = _progressWidth;
     
+    
+    
     [self setTrack];
     [self setProgress];
 }
 
 - (void)setTrack
 {
-    _trackPath = [UIBezierPath bezierPathWithArcCenter:self.center radius:(self.bounds.size.width - _progressWidth)/ 2 startAngle:0 endAngle:M_PI * 2 clockwise:YES];;
+    _trackPath = [UIBezierPath bezierPathWithArcCenter:circleCenter radius:(self.bounds.size.width - _progressWidth)/ 2 startAngle:0 endAngle:M_PI * 2 clockwise:YES];;
     _trackLayer.path = _trackPath.CGPath;
 }
 
 - (void)setProgress
 {
-    _progressPath = [UIBezierPath bezierPathWithArcCenter:self.center radius:(self.bounds.size.width - _progressWidth)/ 2 startAngle:- M_PI_2 endAngle:(M_PI * 2) * _progress - M_PI_2 clockwise:YES];
+    _progressPath = [UIBezierPath bezierPathWithArcCenter:circleCenter radius:(self.bounds.size.width - _progressWidth)/ 2 startAngle:- M_PI_2 endAngle:(M_PI * 2) * _progress - M_PI_2 clockwise:YES];
     _progressLayer.path = _progressPath.CGPath;
 }
 
