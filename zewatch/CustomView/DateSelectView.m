@@ -19,7 +19,7 @@
 
 -(instancetype)initWithPosition:(CGPoint)point dateType:(DateSelectType)dateType delegate:(nullable id<DateSelectViewDelegate>)paramDelegate{
     
-    CGRect frame=CGRectMake(point.x,point.y,SCREENWIDTH,VIEWHEIGHT);
+    CGRect frame=CGRectMake(point.x,point.y,APPS_DEVICE_WIDTH,VIEWHEIGHT);
     self = [super initWithFrame:frame];
     if (self) {
         NSArray *nib = [[NSBundle mainBundle]loadNibNamed:@"DateSelectView" owner:self options:nil];
@@ -374,6 +374,5 @@
         return 30;
     }
 }
-
 
 @end

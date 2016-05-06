@@ -59,6 +59,7 @@
 		BFE7C2F21C608B6E008A5719 /* ActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFE7C2F01C608B6E008A5719 /* ActivityTableViewCell.xib */; };
 		BFE7C2F61C6096A8008A5719 /* ActivityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE7C2F51C6096A8008A5719 /* ActivityModel.m */; };
 		BFFD91561CDAEC48000608EC /* AppsCircleProView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFD91551CDAEC48000608EC /* AppsCircleProView.m */; };
+		BFFD91591CDB4F09000608EC /* GGSportTypeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFD91581CDB4F09000608EC /* GGSportTypeModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,6 +172,8 @@
 		BFE7C2F51C6096A8008A5719 /* ActivityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActivityModel.m; path = ../../../../../../apple/Desktop/mykronoz/zewatch/zewatch/CustomModel/ActivityModel.m; sourceTree = "<group>"; };
 		BFFD91541CDAEC48000608EC /* AppsCircleProView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppsCircleProView.h; sourceTree = "<group>"; };
 		BFFD91551CDAEC48000608EC /* AppsCircleProView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppsCircleProView.m; sourceTree = "<group>"; };
+		BFFD91571CDB4F09000608EC /* GGSportTypeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGSportTypeModel.h; sourceTree = "<group>"; };
+		BFFD91581CDB4F09000608EC /* GGSportTypeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGSportTypeModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -424,6 +427,8 @@
 				BF122BC81CCF5F1600A614D5 /* BlockColumnModel.m */,
 				BFC210101CDADD33006A0C88 /* GGSleepTypeModel.h */,
 				BFC210111CDADD33006A0C88 /* GGSleepTypeModel.m */,
+				BFFD91571CDB4F09000608EC /* GGSportTypeModel.h */,
+				BFFD91581CDB4F09000608EC /* GGSportTypeModel.m */,
 			);
 			path = CustomModel;
 			sourceTree = "<group>";
@@ -577,6 +582,7 @@
 				BF104B581CD1E9E400BAEDF5 /* ActionSheetLocalePicker.m in Sources */,
 				BF104B561CD1E9E400BAEDF5 /* ActionSheetDatePicker.m in Sources */,
 				BF104B5A1CD1E9E400BAEDF5 /* DistancePickerView.m in Sources */,
+				BFFD91591CDB4F09000608EC /* GGSportTypeModel.m in Sources */,
 				BF0A0F5E1CB3573100B9D403 /* DateTestViewController.m in Sources */,
 				BF104B5B1CD1E9E400BAEDF5 /* SWActionSheet.m in Sources */,
 				BF3C6D501CD2ECD900D26D58 /* SleepViewController.m in Sources */,

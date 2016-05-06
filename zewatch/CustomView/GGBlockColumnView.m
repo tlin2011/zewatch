@@ -28,7 +28,7 @@
 
 -(instancetype)initWithDelegate:(nullable id<GGBlockColumnViewDelegate>)delegate viewY:(CGFloat)valueY{
     
-    CGRect frame=CGRectMake(0, valueY, SCREENWIDTH,VIEW_HEIGHT);
+    CGRect frame=CGRectMake(0, valueY, APPS_DEVICE_WIDTH,VIEW_HEIGHT);
     self=[super initWithFrame:frame];
     if (self) {
         
@@ -92,8 +92,18 @@
         h = [self getBlockColomnWidth:colomnModel.type];
         y = VIEW_HEIGHT - h;
         
-        CGRect rect= CGRectMake(x, y, w, h);
+        
+        //动画修改前
+        //CGRect rect= CGRectMake(x, y, w, h);
+        
+        CGRect rect= CGRectMake(x, VIEW_HEIGHT, w, 0);
+        
         UIView *blockColumnView=[[UIView alloc] initWithFrame:rect];
+        
+        [UIView animateWithDuration:0.5 animations:^{
+            blockColumnView.frame =  CGRectMake(x, y, w, h);
+        }];
+        
         blockColumnView.tag=100+n;
         blockColumnView.backgroundColor=[self getBlockColomnColor:colomnModel.type];
         [self addSubview:blockColumnView];
@@ -165,7 +175,7 @@
     NSDate *startDate=((BlockColumnModel *)dataSource[0]).startPoint;
     NSDate *endDate=((BlockColumnModel *)dataSource[dataSource.count-1]).endPoint;
     NSTimeInterval totalSecond=[endDate timeIntervalSinceDate:startDate];
-    perMinute = (SCREENWIDTH - 3 * LEADING) / (totalSecond / 60);
+    perMinute = (APPS_DEVICE_WIDTH - 3 * LEADING) / (totalSecond / 60);
 }
 
 - (void)drawRect:(CGRect)rect {
@@ -177,7 +187,7 @@
     
     CGMutablePathRef hLine=CGPathCreateMutable();
     CGPathMoveToPoint(hLine, NULL, 0, VIEW_HEIGHT);
-    CGPathAddLineToPoint(hLine,NULL, SCREENWIDTH, VIEW_HEIGHT);
+    CGPathAddLineToPoint(hLine,NULL, APPS_DEVICE_WIDTH, VIEW_HEIGHT);
     CGContextAddPath(context, hLine);
     
     CGContextStrokePath(context);
@@ -192,8 +202,8 @@
     CGPoint newPoint=[recognizer locationInView:self];
     
     CGFloat x= newPoint.x;
-    if (x > SCREENWIDTH - LEADING) {
-        x= SCREENWIDTH - LEADING;
+    if (x > APPS_DEVICE_WIDTH - LEADING) {
+        x= APPS_DEVICE_WIDTH - LEADING;
 //        showTipLabel.hidden=YES;
         return;
     }else if (x< LEADING){
@@ -204,7 +214,7 @@
     line.center = CGPointMake(x,(VIEW_HEIGHT/2)+(LINE_Y/2));
     
     //判断是否中线
-    if (x > SCREENWIDTH /2) {
+    if (x > APPS_DEVICE_WIDTH /2) {
         showTipLabel.frame=CGRectMake(x- 30-4, LINE_Y+2, 30, 18);
     }else{
         showTipLabel.frame=CGRectMake(x+4, LINE_Y+2, 30, 18);
@@ -262,7 +272,7 @@
 
 -(void)addBlockColumn{
     //每个view的宽度
-    CGFloat width=(SCREENWIDTH - 3 * LEADING) / 3;
+    CGFloat width=(APPS_DEVICE_WIDTH - 3 * LEADING) / 3;
     
     for (int i=0; i<3; i++) {
         [self addSubview:[self addBlockColumnLabelAndImage:i width:width]];

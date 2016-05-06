@@ -29,7 +29,7 @@
 }
 
 -(instancetype)initDatePicker{
-    CGRect frame=CGRectMake(0,SCREENHEIGHT-GGDATEPICKERHEIGHT,SCREENWIDTH,GGDATEPICKERHEIGHT);
+    CGRect frame=CGRectMake(0,APPS_DEVICE_HEIGHT-GGDATEPICKERHEIGHT,APPS_DEVICE_WIDTH,GGDATEPICKERHEIGHT);
     self=[super initWithFrame:frame];
     if (self) {
         NSArray *tempNib= [[NSBundle mainBundle] loadNibNamed:@"GGDatePicker" owner:self options:nil];
@@ -123,27 +123,6 @@
     //确定
     NSString *selectDateStr=[NSString stringWithFormat:@"%@-%@-%@",[yearArray objectAtIndex:selectedYearRow],[[currenMonthArray objectAtIndex:selectedMonthRow] intValue]>9?[currenMonthArray objectAtIndex:selectedMonthRow]:[NSString stringWithFormat:@"0%@",[currenMonthArray objectAtIndex:selectedMonthRow]],[[daysArray objectAtIndex:selectedDayRow] intValue]>9?[daysArray objectAtIndex:selectedDayRow] :[NSString stringWithFormat:@"0%@",[daysArray objectAtIndex:selectedDayRow]]];
     
-//    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
-//    [formatter setDateFormat:@"yyyy-MM-dd"];
-//    
-////    NSString *da=@"2016-04-28";
-//    
-//    NSDate *selectDate=[formatter dateFromString:selectDateStr];
-//    
-//    NSString *nowDateStr=[formatter stringFromDate:[NSDate date]];
-//    
-//     NSDate *nowDate=[formatter dateFromString:nowDateStr];
-//    
-//    NSTimeInterval interval=[selectDate timeIntervalSinceDate:nowDate];
-//    
-//    if (interval > 0) {
-//        
-//        selectDateStr=nowDateStr;
-//        selectedYearRow=yearArray.count-1;
-//        selectedMonthRow=monthArray.count-1;
-//        selectedDayRow=currenDaysArray.count-1;
-//    }
-//    
     
     if ([self.delegate respondsToSelector:@selector(datePickerView:selectDateStr:)]) {
         [self.delegate datePickerView:self selectDateStr:selectDateStr];

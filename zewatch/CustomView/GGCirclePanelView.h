@@ -19,9 +19,6 @@
 
 -(instancetype)initWithFrame:(CGRect)frame dateSource:(NSArray *)dataSource headImg:(NSString *)headImg;
 
-//@property(nonatomic,strong)NSArray *dataSource;     //数据源，排序
-//
-//@property(nonatomic,strong)NSString *headIcon;      //头像图片名称
 
 
 @end

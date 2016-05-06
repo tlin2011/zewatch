@@ -23,7 +23,7 @@
 
 -(instancetype)initWithValue:(NSString *)value Goal:(NSString *)goal unit:(NSString *)unit viewY:(CGFloat)valueY{
     
-    self=[super initWithFrame:CGRectMake(0,valueY, SCREENWIDTH, VIEWHEIGHT)];
+    self=[super initWithFrame:CGRectMake(0,valueY, APPS_DEVICE_WIDTH, VIEWHEIGHT)];
     
     if (self) {
         
@@ -34,13 +34,13 @@
         NSMutableAttributedString *labelText=[[NSMutableAttributedString alloc] initWithString:currentValueStr];
         [labelText addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Helvetica-Bold" size:30.0] range:NSMakeRange(0,[value length])];
         [labelText addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Helvetica-Bold" size:12.0] range:NSMakeRange([value length],[currentValueStr length]-[value length])];
-        currentValueLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH/2, VIEWHEIGHT)];
+        currentValueLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, APPS_DEVICE_WIDTH/2, VIEWHEIGHT)];
         currentValueLabel.textAlignment=NSTextAlignmentCenter;
         currentValueLabel.attributedText=labelText;
         [self addSubview:currentValueLabel];
     
         
-        processGoalLabel = [[UILabel alloc] initWithFrame:CGRectMake(SCREENWIDTH/2, 0, SCREENWIDTH/2, VIEWHEIGHT)];
+        processGoalLabel = [[UILabel alloc] initWithFrame:CGRectMake(APPS_DEVICE_WIDTH/2, 0, APPS_DEVICE_WIDTH/2, VIEWHEIGHT)];
         CGFloat percentValue=[value floatValue]/[goal floatValue] * 100;
         NSString *goalLabelStr=[NSString stringWithFormat:@"%1.f%@  GOAL",percentValue,@"%"];
         NSMutableAttributedString *goalText=[[NSMutableAttributedString alloc] initWithString:goalLabelStr];
@@ -50,7 +50,7 @@
         processGoalLabel.attributedText=goalText;
         [self addSubview:processGoalLabel];
         
-        goalLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, VIEWHEIGHT)];
+        goalLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, APPS_DEVICE_WIDTH, VIEWHEIGHT)];
         NSString *dailyGoalStr=[NSString stringWithFormat:@"%@  %@  %@",@"DAILY GOAL",goal,unit];
         NSMutableAttributedString *dailyGoalText=[[NSMutableAttributedString alloc] initWithString:dailyGoalStr];
         [dailyGoalText addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Helvetica" size:14.0] range:NSMakeRange(0,10)];

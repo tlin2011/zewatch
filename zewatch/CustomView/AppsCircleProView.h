@@ -15,7 +15,7 @@
 #import <UIKit/UIKit.h>
 
 //环形的宽度
-#define  PROGRESSWIDTH 10
+#define  PROGRESSWIDTH 8
 
 @interface AppsCircleProView : UIView
 @property (nonatomic, strong) UIColor *trackColor;    //底部的颜色

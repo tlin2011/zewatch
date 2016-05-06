@@ -15,8 +15,14 @@
     #import <Foundation/Foundation.h>
 
 
-#define SCREENWIDTH  [UIScreen mainScreen].bounds.size.width
-#define SCREENHEIGHT  [UIScreen mainScreen].bounds.size.height
+
+#define APPS_DEVICE_WIDTH  [UIScreen mainScreen].bounds.size.width
+
+
+#define APPS_DEVICE_HEIGHT [UIScreen mainScreen].bounds.size.height
+
+
+
 
 #define THEMECOLOR    [UIColor colorWithRed:47.0f/255.0f green:169.0f/255.0f blue:141.0f/255.0f alpha:1]
 

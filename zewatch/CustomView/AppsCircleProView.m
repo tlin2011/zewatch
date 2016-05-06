@@ -9,8 +9,6 @@
 #import "AppsCircleProView.h"
 
 
-
-
 @implementation AppsCircleProView{
     CAShapeLayer *_trackLayer;
     UIBezierPath *_trackPath;
@@ -75,6 +73,12 @@
 {
     _progressPath = [UIBezierPath bezierPathWithArcCenter:circleCenter radius:(self.bounds.size.width - _progressWidth)/ 2 startAngle:- M_PI_2 endAngle:(M_PI * 2) * _progress - M_PI_2 clockwise:YES];
     _progressLayer.path = _progressPath.CGPath;
+    
+    CABasicAnimation *animation=[CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+    animation.fromValue=@(0);
+    animation.toValue=@(1);
+    animation.duration=0.5;
+    [_progressLayer addAnimation:animation forKey:@"strokeEndAnimation"];
 }
 
 

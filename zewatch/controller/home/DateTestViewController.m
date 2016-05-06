@@ -150,7 +150,7 @@
     
     NSArray *dataSource=[NSArray arrayWithObjects:s1,s2,s3,s4,s5,s6,nil];
     //48 即下方TabBar 高度
-    GGSleepTypePanelView *sleepTypePanelView=[[GGSleepTypePanelView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(view.frame),SCREENWIDTH,(SCREENHEIGHT-CGRectGetMaxY(view.frame)-48))];
+    GGSleepTypePanelView *sleepTypePanelView=[[GGSleepTypePanelView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(view.frame),APPS_DEVICE_WIDTH,(APPS_DEVICE_HEIGHT-CGRectGetMaxY(view.frame)-48))];
     [sleepTypePanelView setDataSouce:dataSource];
     [self.view addSubview:sleepTypePanelView];
     

@@ -42,7 +42,7 @@
 }
 
 -(instancetype)initWithStyle:(GGColumnViewStyle)columnTyle delegate:(nullable id<GGColumeViewDelegate>)delegate viewY:(CGFloat)valueY{
-    CGRect frame=CGRectMake(0, valueY, SCREENWIDTH,VIEW_HEIGHT);
+    CGRect frame=CGRectMake(0, valueY, APPS_DEVICE_WIDTH,VIEW_HEIGHT);
     self=[super initWithFrame:frame];
     if (self) {
         currentStyle=columnTyle;
@@ -91,8 +91,18 @@
         h = [dataSource[n] floatValue] / columnGoal * VIEW_HEIGHT;
         y = VIEW_HEIGHT - h;
         
-        CGRect rect= CGRectMake(x, y, columnWidth, h);
+        CGRect rect= CGRectMake(x, VIEW_HEIGHT, columnWidth, 0);
+        
         UIView *columnView=[[UIView alloc] initWithFrame:rect];
+        
+        //动画前
+        //CGRect rect= CGRectMake(x, y, columnWidth, h);
+        
+        //高度从 0 开始，y 从VIEW_HEIGHT开始，加日期下标，x w 没变，高度由原来  y+h 直接变为 VIEW_HEIGHT
+        [UIView animateWithDuration:0.5 animations:^{
+           columnView.frame =CGRectMake(x, y, columnWidth, h);
+        }];
+        
         columnView.tag=100+n;
         CGFloat colorParam = h / VIEW_HEIGHT;
         
@@ -188,7 +198,7 @@
     columnGoal=[self.delegate goalOfColumnView:self];
     dataSource =[self.delegate dataSourceOfColumnView:self];
     lineIndex =[self.delegate lineIndexOfColumnView:self];
-    columnSpace=(SCREENWIDTH-2 * LEADING - drawCount * columnWidth)/(drawCount-1);
+    columnSpace=(APPS_DEVICE_WIDTH-2 * LEADING - drawCount * columnWidth)/(drawCount-1);
 }
 
 
@@ -214,7 +224,7 @@
     
     CGMutablePathRef hLine=CGPathCreateMutable();
     CGPathMoveToPoint(hLine, NULL, 0, VIEW_HEIGHT);
-    CGPathAddLineToPoint(hLine,NULL, SCREENWIDTH, VIEW_HEIGHT);
+    CGPathAddLineToPoint(hLine,NULL, APPS_DEVICE_WIDTH, VIEW_HEIGHT);
     CGContextAddPath(context, hLine);
     
     CGContextStrokePath(context);
@@ -229,8 +239,8 @@
     CGPoint newPoint=[recognizer locationInView:self];
     
     CGFloat x= newPoint.x;
-    if (x > SCREENWIDTH - LEADING) {
-        x= SCREENWIDTH - LEADING;
+    if (x > APPS_DEVICE_WIDTH - LEADING) {
+        x= APPS_DEVICE_WIDTH - LEADING;
         showTipLabel.hidden=YES;
         return;
         
@@ -242,7 +252,7 @@
     
     line.center = CGPointMake(x,VIEW_HEIGHT/2);
     
-    if (x > SCREENWIDTH /2) {
+    if (x > APPS_DEVICE_WIDTH /2) {
         showTipLabel.frame=CGRectMake(x -30 -4, 2, 30, 18);
         showTipLabel.textAlignment=NSTextAlignmentRight;
     }else{

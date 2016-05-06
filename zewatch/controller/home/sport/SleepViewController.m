@@ -51,18 +51,16 @@
     dateView=[[DateSelectView alloc] initWithPosition:CGPointMake(0, 65) dateType:DateSelectTypeDay delegate:self];
     [self.view addSubview:dateView];
     
-    
-    pview=[[ProcessStateView alloc] initWithValue:@"2500" Goal:@"10000" unit:@"KM" viewY:120];
+    pview=[[ProcessStateView alloc] initWithValue:@"2500" Goal:@"10000" unit:@"KM" viewY:CGRectGetMaxY(dateView.frame)];
     [self.view addSubview:pview];
     
-    blockView=[[GGBlockColumnView alloc] initWithDelegate:self viewY:170];
+    blockView=[[GGBlockColumnView alloc] initWithDelegate:self viewY:CGRectGetMaxY(pview.frame)];
     [self.view addSubview:blockView];
     
-    columnView=[[GGColumnView alloc] initWithStyle:GGColumnViewStyleWeek delegate:self viewY:170];
+    columnView=[[GGColumnView alloc] initWithStyle:GGColumnViewStyleWeek delegate:self viewY:CGRectGetMaxY(pview.frame)];
     columnView.hidden=YES;
     [self.view addSubview:columnView];
 }
-
 
 
 -(NSArray *)dataSourceOfBlockColumnView:(GGBlockColumnView *)columnView{
@@ -71,14 +69,10 @@
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     
     NSDate *date=[dateFormatter dateFromString:@"2015-08-08 10:08:56"];
-    
     NSDate *date2=[date dateByAddingTimeInterval:24 * 60 *60];
-    
     NSLog(@"%@",[dateFormatter stringFromDate:date2]);
     
-    
     //封装的假数据
-    
     BlockColumnModel *model =[[BlockColumnModel alloc] init];
     [model setStartPoint:[dateFormatter dateFromString:@"2015-08-08 10:08:56"]];
     [model setEndPoint:[dateFormatter dateFromString:@"2015-08-08 10:11:56"]];
@@ -219,13 +213,9 @@
     }
 }
 
-
-
 //日期选择的代理
 -(void)dateSelectView:(DateSelectView *)dateSelectView dateType:(DateSelectType)dateSelectType selectDate:(NSDate *)selectDate{
-
     currentSelectDate =selectDate;
-    
     if (currentStyle == GGColumnViewStyleDay) {
         [blockView reloadData];
     }else{
@@ -251,6 +241,5 @@
     NSArray *dateArray = [[dateFormatter stringFromDate:currentSelectDate] componentsSeparatedByString:@"-"];
     return [NSDate daysInYear:[dateArray[0] integerValue] month:[dateArray[1] integerValue]];
 }
-
 
 @end

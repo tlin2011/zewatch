@@ -14,7 +14,6 @@
 #import <UIKit/UIKit.h>
 
 
-
 @interface GGSleepTypePanelView : UIView
 
 @property(nonatomic,strong)NSArray *dataSouce;

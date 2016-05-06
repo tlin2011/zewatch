@@ -8,8 +8,8 @@
 
 #import "SportViewController.h"
 #import "ProcessStateView.h"
-
 #import "NSDate+Utilities.h"
+
 
 @interface SportViewController ()
 
@@ -32,13 +32,15 @@
     dateView=[[DateSelectView alloc] initWithPosition:CGPointMake(0, 65) dateType:DateSelectTypeDay delegate:self];
     [self.view addSubview:dateView];
 
-    columnView=[[GGColumnView alloc] initWithStyle:GGColumnViewStyleDay delegate:self viewY:170];
+    //目标实现状态
+    pview=[[ProcessStateView alloc] initWithValue:@"1234" Goal:@"10000" unit:@"KM" viewY:CGRectGetMaxY(dateView.frame)];
+    
+    columnView=[[GGColumnView alloc] initWithStyle:GGColumnViewStyleDay delegate:self viewY:CGRectGetMaxY(pview.frame)];
     [self.view addSubview:columnView];
     
     //模式的模式为 天
     currentStyle = GGColumnViewStyleDay;
-
-    pview=[[ProcessStateView alloc] initWithValue:@"2500" Goal:@"10000" unit:@"KM" viewY:120];
+    
     [self.view addSubview:pview];
 }
 
@@ -47,14 +49,12 @@
 -(void)dateSelectView:(DateSelectView *)dateSelectView dateType:(DateSelectType)dateSelectType selectDate:(NSDate *)selectDate{
     currentSelectDate = selectDate;
     [columnView reloadData];
-    
 }
 
 -(void)dateSelectView:(DateSelectView *)dateSelectView dateType:(DateSelectType)dateSelectType selectStartDate:(NSDate *)selectStartDate selectEndDate:(NSDate *)selectEndDate{
     currentSelectDate = selectStartDate;
     [columnView reloadData];
 }
-
 
 #pragma mark  运动数据代理
 //列数
@@ -82,7 +82,6 @@
 
 // 滑动线停在第几列
 -(NSInteger)lineIndexOfColumnView:(GGColumnView *)columnView{
-    
     switch (currentStyle) {
         case GGColumnViewStyleDay:
             return 2;
@@ -97,7 +96,6 @@
             return 0;
             break;
     }
-
 }
 
 //滑动线 和列 相交时 显示的值
