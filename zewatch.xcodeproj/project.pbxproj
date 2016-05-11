@@ -54,8 +54,6 @@
 		BFC210121CDADD33006A0C88 /* GGSleepTypeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC210111CDADD33006A0C88 /* GGSleepTypeModel.m */; };
 		BFC210151CDAE44C006A0C88 /* GGCirclePanelView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC210141CDAE44C006A0C88 /* GGCirclePanelView.m */; };
 		BFE7C2EC1C6078E9008A5719 /* icon_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = BFE7C2EB1C6078E9008A5719 /* icon_logo.png */; };
-		BFE7C2F11C608B6E008A5719 /* ActivityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE7C2EF1C608B6E008A5719 /* ActivityTableViewCell.m */; };
-		BFE7C2F21C608B6E008A5719 /* ActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFE7C2F01C608B6E008A5719 /* ActivityTableViewCell.xib */; };
 		BFFD91561CDAEC48000608EC /* AppsCircleProView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFD91551CDAEC48000608EC /* AppsCircleProView.m */; };
 		BFFD91591CDB4F09000608EC /* GGSportTypeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFD91581CDB4F09000608EC /* GGSportTypeModel.m */; };
 		BFFE1B7F1CDC761F000A2F35 /* brk.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFFE1B7E1CDC761F000A2F35 /* brk.ttf */; };
@@ -163,9 +161,6 @@
 		BFC210131CDAE44C006A0C88 /* GGCirclePanelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGCirclePanelView.h; sourceTree = "<group>"; };
 		BFC210141CDAE44C006A0C88 /* GGCirclePanelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGCirclePanelView.m; sourceTree = "<group>"; };
 		BFE7C2EB1C6078E9008A5719 /* icon_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_logo.png; sourceTree = "<group>"; };
-		BFE7C2EE1C608B6E008A5719 /* ActivityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActivityTableViewCell.h; path = ../../../../../../apple/Desktop/mykronoz/zewatch/zewatch/CustomView/ActivityTableViewCell.h; sourceTree = "<group>"; };
-		BFE7C2EF1C608B6E008A5719 /* ActivityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActivityTableViewCell.m; path = ../../../../../../apple/Desktop/mykronoz/zewatch/zewatch/CustomView/ActivityTableViewCell.m; sourceTree = "<group>"; };
-		BFE7C2F01C608B6E008A5719 /* ActivityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ActivityTableViewCell.xib; path = ../../../../../../apple/Desktop/mykronoz/zewatch/zewatch/CustomView/ActivityTableViewCell.xib; sourceTree = "<group>"; };
 		BFFD91541CDAEC48000608EC /* AppsCircleProView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppsCircleProView.h; sourceTree = "<group>"; };
 		BFFD91551CDAEC48000608EC /* AppsCircleProView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppsCircleProView.m; sourceTree = "<group>"; };
 		BFFD91571CDB4F09000608EC /* GGSportTypeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGSportTypeModel.h; sourceTree = "<group>"; };
@@ -389,9 +384,6 @@
 				BFFD91551CDAEC48000608EC /* AppsCircleProView.m */,
 				BFC210131CDAE44C006A0C88 /* GGCirclePanelView.h */,
 				BFC210141CDAE44C006A0C88 /* GGCirclePanelView.m */,
-				BFE7C2EE1C608B6E008A5719 /* ActivityTableViewCell.h */,
-				BFE7C2EF1C608B6E008A5719 /* ActivityTableViewCell.m */,
-				BFE7C2F01C608B6E008A5719 /* ActivityTableViewCell.xib */,
 				BF0A0F621CB361E900B9D403 /* DateSelectView.h */,
 				BF0A0F631CB361E900B9D403 /* DateSelectView.m */,
 				BF0A0F651CB362A500B9D403 /* DateSelectView.xib */,
@@ -557,7 +549,6 @@
 				BF0A0F661CB362A500B9D403 /* DateSelectView.xib in Resources */,
 				BF0A0F6E1CB3700200B9D403 /* calendar.png in Resources */,
 				BF104B601CD1F10500BAEDF5 /* LeaderCell.xib in Resources */,
-				BFE7C2F21C608B6E008A5719 /* ActivityTableViewCell.xib in Resources */,
 				BFBA84051CC0B8E500FE823D /* Icon.png in Resources */,
 				BF674C721CD9E495000D9245 /* GGSleepTypeView.xib in Resources */,
 				BF790FC41C5CE97500377742 /* activity_bg.png in Resources */,
@@ -616,7 +607,6 @@
 				BF104B591CD1E9E400BAEDF5 /* ActionSheetStringPicker.m in Sources */,
 				BF104B571CD1E9E400BAEDF5 /* ActionSheetDistancePicker.m in Sources */,
 				BF5AD1571CBB989500DF69DF /* GGColumnView.m in Sources */,
-				BFE7C2F11C608B6E008A5719 /* ActivityTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
