@@ -10,7 +10,6 @@
 #import "ActivityViewController.h"
 #import "DateTestViewController.h"
 
-#import "GoalSettingTableViewController.h"
 
 
 @interface ZeWatchAppDelegate ()
@@ -41,8 +40,9 @@
         
         
         
-        GoalSettingTableViewController *goalSettingController=[[GoalSettingTableViewController alloc] initWithStyle:UITableViewStylePlain];
-        UINavigationController *goalNavigationController=[[UINavigationController alloc] initWithRootViewController:goalSettingController];
+//        GoalSettingTableViewController *goalSettingController=[[GoalSettingTableViewController alloc] initWithStyle:UITableViewStylePlain];
+//        UINavigationController *goalNavigationController=[[UINavigationController alloc] initWithRootViewController:goalSettingController];
+//        
         
         DateTestViewController *dateTest=[[DateTestViewController alloc] init];
         UINavigationController *dateNavigationController=[[UINavigationController alloc] initWithRootViewController:dateTest];
@@ -56,12 +56,12 @@
         UITabBarItem *activityItem=[[UITabBarItem alloc] initWithTitle:@"DD" image:nil selectedImage:nil];
         activityNavigationController.tabBarItem=activityItem;
         
-        UITabBarItem *goalItem=[[UITabBarItem alloc] initWithTitle:@"DD" image:nil selectedImage:nil];
-        goalNavigationController.tabBarItem=goalItem;
+//        UITabBarItem *goalItem=[[UITabBarItem alloc] initWithTitle:@"DD" image:nil selectedImage:nil];
+//        goalNavigationController.tabBarItem=goalItem;
         
         
         
-        NSArray *viewControllers = [NSArray arrayWithObjects:activityNavigationController,dateNavigationController,goalNavigationController,nil];
+        NSArray *viewControllers = [NSArray arrayWithObjects:activityNavigationController,dateNavigationController,nil];
         UITabBarController *mainViewController = [[UITabBarController alloc]init];
         mainViewController.viewControllers = viewControllers;
         
