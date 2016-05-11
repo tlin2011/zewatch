@@ -25,7 +25,7 @@
 }
 
 - (void)testExample {
-     XCTFail(@"No implementation for");
+    
 }
 
 

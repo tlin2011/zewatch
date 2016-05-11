@@ -41,6 +41,8 @@
 		BF43454A1CBE1C120077EA0B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF4345491CBE1C120077EA0B /* QuartzCore.framework */; };
 		BF5AD1541CBB8C2900DF69DF /* GGBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5AD1531CBB8C2900DF69DF /* GGBaseViewController.m */; };
 		BF5AD1571CBB989500DF69DF /* GGColumnView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5AD1561CBB989500DF69DF /* GGColumnView.m */; };
+		BF62D7801CE32E820037071C /* zewatch.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF3C62D01C5CD2A000B25252 /* zewatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BF62D7821CE32EA20037071C /* zewatch.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF3C62D01C5CD2A000B25252 /* zewatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		BF674C6D1CD99651000D9245 /* GGBezierView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF674C6C1CD99650000D9245 /* GGBezierView.m */; };
 		BF674C701CD9E457000D9245 /* GGSleepTypeView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF674C6F1CD9E457000D9245 /* GGSleepTypeView.m */; };
 		BF674C721CD9E495000D9245 /* GGSleepTypeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF674C711CD9E495000D9245 /* GGSleepTypeView.xib */; };
@@ -76,6 +78,29 @@
 			remoteInfo = zewatch;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BF62D77F1CE32E580037071C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BF62D7801CE32E820037071C /* zewatch.app in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF62D7811CE32E880037071C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BF62D7821CE32EA20037071C /* zewatch.app in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		BF0A0F5C1CB3573100B9D403 /* DateTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DateTestViewController.h; path = zewatch/controller/home/DateTestViewController.h; sourceTree = SOURCE_ROOT; };
@@ -458,6 +483,7 @@
 				BF3C62E51C5CD2A000B25252 /* Sources */,
 				BF3C62E61C5CD2A000B25252 /* Frameworks */,
 				BF3C62E71C5CD2A000B25252 /* Resources */,
+				BF62D7811CE32E880037071C /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -476,6 +502,7 @@
 				BF3C62F01C5CD2A000B25252 /* Sources */,
 				BF3C62F11C5CD2A000B25252 /* Frameworks */,
 				BF3C62F21C5CD2A000B25252 /* Resources */,
+				BF62D77F1CE32E580037071C /* CopyFiles */,
 			);
 			buildRules = (
 			);
