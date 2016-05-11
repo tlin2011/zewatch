@@ -19,4 +19,13 @@
  */
 -(void)switchModel:(BOOL)showGoal;
 
+
+
+/**
+ *  @author guotonglin, 16-05-09 11:05:05
+ *
+ *  时间切换  更新UI
+ */
+-(void)updateUIWithCurrentValue:(NSString *)value;
+
 @end

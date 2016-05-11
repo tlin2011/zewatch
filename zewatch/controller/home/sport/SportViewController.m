@@ -49,6 +49,8 @@
 -(void)dateSelectView:(DateSelectView *)dateSelectView dateType:(DateSelectType)dateSelectType selectDate:(NSDate *)selectDate{
     currentSelectDate = selectDate;
     [columnView reloadData];
+    //更新完成度
+    [pview updateUIWithCurrentValue:@"2000"];
 }
 
 -(void)dateSelectView:(DateSelectView *)dateSelectView dateType:(DateSelectType)dateSelectType selectStartDate:(NSDate *)selectStartDate selectEndDate:(NSDate *)selectEndDate{
@@ -77,36 +79,66 @@
 }
 
 -(NSInteger)goalOfColumnView:(GGColumnView *)columnView{
-    return 100;
+    return 14;
 }
+
 
 // 滑动线停在第几列
 -(NSInteger)lineIndexOfColumnView:(GGColumnView *)columnView{
+    
+//   BOOL haha=[SportViewController checkDateSetting24Hours];
+    
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSCalendarUnit calendarUnit =NSDayCalendarUnit | NSWeekdayCalendarUnit | NSHourCalendarUnit;
+    NSDateComponents *theComponents = [calendar components:calendarUnit fromDate:[NSDate date]];
+    
     switch (currentStyle) {
         case GGColumnViewStyleDay:
-            return 2;
+            return theComponents.hour;
             break;
         case GGColumnViewStyleWeek:
-            return 2;
+            return theComponents.weekday-1==0?7:theComponents.weekday-1;
             break;
         case GGColumnViewStyleMonth:
-            return 2;
+            return theComponents.day;
             break;
         default:
             return 0;
             break;
     }
+    
 }
+
+
+//+ (BOOL)checkDateSetting24Hours{
+//    BOOL is24Hours = YES;
+//    NSString *dateStr = [[NSDate date] descriptionWithLocale:[NSLocale currentLocale]];
+//    NSArray  *sysbols = @[[[NSCalendar currentCalendar] AMSymbol],[[NSCalendar currentCalendar] PMSymbol]];
+//    for (NSString *symbol in sysbols) {
+//        if ([dateStr rangeOfString:symbol].location != NSNotFound) {//find
+//            is24Hours = NO;
+//            break;
+//        }
+//    }
+//    return is24Hours;
+//}
+
 
 //滑动线 和列 相交时 显示的值
 -(NSString *)intersectsShowTipColumnView:(GGColumnView *)columnView intersectsIndex:(NSInteger)index{
+    
     NSArray *tempArray=[NSArray arrayWithObjects:@(6),@(12),@(36),@(48),@(12),@(56),@(78),@(12),@(36),@(48),@(12),@(56),@(78),@(12),@(36),@(48),@(12),@(56),@(78),@(12),@(36),@(48),@(12),@(56),@(6),@(12),@(36),@(48),@(12),@(56),@(78),nil];
+    
+    
     return [NSString stringWithFormat:@"%@",tempArray[index]];
 }
 
 //数据源
 -(NSArray *)dataSourceOfColumnView:(GGColumnView *)columnView{
-    NSArray *tempArray=[NSArray arrayWithObjects:@(6),@(12),@(36),@(48),@(12),@(56),@(78),@(12),@(36),@(48),@(12),@(56),@(78),@(12),@(36),@(48),@(12),@(56),@(78),@(12),@(36),@(48),@(12),@(56),@(6),@(12),@(36),@(48),@(12),@(56),@(78),nil];
+    NSArray *tempArray=[NSArray arrayWithObjects:@(6),@(12),@(36),@(48),@(12),@(56),@(78),@(12),@(36),@(48),@(12),@(56),@(150),@(12),@(36),@(48),@(12),@(56),@(78),@(12),@(36),@(48),@(12),@(56),@(6),@(12),@(36),@(48),@(12),@(56),@(78),nil];
+//
+//    NSArray *tempArray =[NSArray array];
+    
     return tempArray;
 }
 
@@ -143,6 +175,7 @@
     currentStyle=selectStyle;
     //重新调用代理方法， 刷新
     [columnView reloadData];
+    
 }
 
 -(NSInteger)getDayCountByYearAndMonth{

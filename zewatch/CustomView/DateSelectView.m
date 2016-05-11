@@ -188,6 +188,7 @@
 
 //初始化显示日期信息
 -(void)showDateMsg{
+    
     currentDateIndex=0;
     
     switch (selectDateType) {
@@ -231,6 +232,12 @@
     NSDateComponents *theComponents = [calendar components:calendarUnit fromDate:[NSDate date]];
     
     NSInteger tempWeek=theComponents.weekday - 2;
+    
+    
+    // 系统数字和星期之间的切换
+    if (tempWeek==-1) {
+        tempWeek = 6;
+    }
     
     //记录今天是周几
     currentWeek=tempWeek;

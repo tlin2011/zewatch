@@ -67,6 +67,12 @@
     [allSubviewFrame removeAllObjects];
     
     [self initDrawParam];
+    
+    
+    if (!(dataSource && dataSource.count>0)) {
+        return;
+    }
+    
     CGFloat x;
     CGFloat y;
     CGFloat h;
@@ -79,7 +85,7 @@
     [self addGestureRecognizer:gesture];
     [self addSubview:line];
     
-    showTipLabel=[[UILabel alloc] initWithFrame:CGRectMake(20, 5, 30, 18)];
+    showTipLabel=[[UILabel alloc] initWithFrame:CGRectMake(20, 5, 50, 18)];
     showTipLabel.textAlignment=NSTextAlignmentLeft;
     showTipLabel.font=[UIFont systemFontOfSize:8];
     showTipLabel.backgroundColor=[UIColor clearColor];
@@ -88,7 +94,10 @@
     //柱条
     for (int n = 0; n< drawCount; n++) {
         x= n * columnSpace + n * columnWidth + LEADING ;
-        h = [dataSource[n] floatValue] / columnGoal * VIEW_HEIGHT;
+        h = [dataSource[n] floatValue] /  columnGoal * VIEW_HEIGHT;
+        if (h>VIEW_HEIGHT - 20) {
+            h = VIEW_HEIGHT - 20;
+        }
         y = VIEW_HEIGHT - h;
         
         CGRect rect= CGRectMake(x, VIEW_HEIGHT, columnWidth, 0);
@@ -118,8 +127,8 @@
         [allSubviewFrame addObject:[NSValue valueWithCGRect:rect]];
     }
     
-    [self addDateIndex];
-    
+
+    //更新滑动线
     [self updateLineFrame];
     
 }
@@ -147,8 +156,12 @@
 -(void)addDateLabelIndex:(NSInteger)index fontSize:(NSInteger)fontSize style:(GGColumnViewStyle)style{
     
     for (int i=0; i< index  ; i++) {
-        CGRect rect=[(NSValue *)allSubviewFrame[i] CGRectValue];
-        CGRect labelRect=CGRectMake(rect.origin.x,rect.origin.y+rect.size.height, rect.size.width,15);
+        
+        CGFloat x=i * columnSpace + i * columnWidth + LEADING ;
+        CGFloat y=VIEW_HEIGHT ;
+        
+        CGRect labelRect=CGRectMake(x,y, columnWidth,15);
+        
         UILabel *label=[[UILabel alloc] initWithFrame:labelRect];
         label.font=[UIFont systemFontOfSize:fontSize];
         
@@ -168,7 +181,7 @@
 -(void)updateLineFrame{
     int  x= (lineIndex-1) * columnWidth + (lineIndex-1) * columnSpace + columnWidth /2 +LEADING;
     line.frame=CGRectMake(x,0, 1,VIEW_HEIGHT);
-    showTipLabel.frame=CGRectMake(x+4, 2, 30, 18);   //+4 因为文字左对齐
+    showTipLabel.frame=CGRectMake(x+4, 2, 50, 18);   //+4 因为文字左对齐
     [self checkSubviewIntersectsWithLine:self];
 }
 
@@ -193,12 +206,28 @@
         default:
             break;
     }
+    dataSource =[self.delegate dataSourceOfColumnView:self];
     
     drawCount=[self.delegate numberOfColumnInColumnView:self];
-    columnGoal=[self.delegate goalOfColumnView:self];
-    dataSource =[self.delegate dataSourceOfColumnView:self];
-    lineIndex =[self.delegate lineIndexOfColumnView:self];
+
+    if ([self.delegate respondsToSelector:@selector(goalOfColumnView:)]) {
+        columnGoal = [self.delegate goalOfColumnView:self];
+    }
+    
+    if ([self.delegate respondsToSelector:@selector(lineIndexOfColumnView:)]) {
+        lineIndex =[self.delegate lineIndexOfColumnView:self];
+    }
+
     columnSpace=(APPS_DEVICE_WIDTH-2 * LEADING - drawCount * columnWidth)/(drawCount-1);
+    
+    //保证代理数据的正确性
+    CGFloat max =[[dataSource valueForKeyPath:@"@max.floatValue"] floatValue];
+    if (columnGoal < max) {
+        columnGoal = max;
+    }
+    columnGoal = columnGoal * 1.5;    // 暂时约定 1.5
+    
+    [self addDateIndex];
 }
 
 
@@ -236,6 +265,7 @@
 //滚动 线条，
 - (void)handlePan:(UIPanGestureRecognizer*)recognizer
 {
+    
     CGPoint newPoint=[recognizer locationInView:self];
     
     CGFloat x= newPoint.x;
@@ -253,10 +283,10 @@
     line.center = CGPointMake(x,VIEW_HEIGHT/2);
     
     if (x > APPS_DEVICE_WIDTH /2) {
-        showTipLabel.frame=CGRectMake(x -30 -4, 2, 30, 18);
+        showTipLabel.frame=CGRectMake(x -50 -4, 2, 50, 18);
         showTipLabel.textAlignment=NSTextAlignmentRight;
     }else{
-        showTipLabel.frame=CGRectMake(x+4, 2, 30, 18);
+        showTipLabel.frame=CGRectMake(x+4, 2, 50, 18);
         showTipLabel.textAlignment=NSTextAlignmentLeft;
     }
     
@@ -283,6 +313,8 @@
             break;
         }
     }
+    
+    //如果有交集
     if (isIntersects) {
         line.backgroundColor=intersectsColor;
         showTipLabel.text=[self.delegate intersectsShowTipColumnView:self intersectsIndex:tag-100];

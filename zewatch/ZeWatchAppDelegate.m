@@ -24,6 +24,8 @@
     
     self.window=[[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
+    
+    
     //动态判断首页模式     侧滑  或  tarbar
     BOOL switchHomeModel=YES;
     
@@ -32,7 +34,10 @@
         
         UINavigationController *activityNavigationController=[[UINavigationController alloc] initWithRootViewController:activityController];
     
+
         [activityNavigationController.navigationBar setBarTintColor:THEMECOLOR];
+        
+        
         
         
         
@@ -75,6 +80,10 @@
         
     }
   
+
+    
+    [[UIBarButtonItem appearance] setTintColor:[UIColor whiteColor]];
+    
     return YES;
     
 }

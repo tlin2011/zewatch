@@ -12,11 +12,15 @@
 
 @implementation ProcessStateView{
     
-    UILabel *currentValueLabel;         //显示完成值
+    UILabel   *currentValueLabel;         //显示完成值
     
-    UILabel *processGoalLabel;         //完成百分比
+    UILabel   *processGoalLabel;         //完成百分比
     
-    UILabel *goalLabel;                 //目标值
+    UILabel   *goalLabel;                 //目标值
+    
+    NSString  *goalValue;               //目标值
+    
+    NSString  *goalUnit;                //单位
 
 }
 
@@ -27,39 +31,29 @@
     
     if (self) {
         
+        goalUnit = unit;
+        goalValue = goal;
+    
         self.backgroundColor=[UIColor colorWithRed:212.0f/255.0f green:213.0f/255.0f blue:213.f/255.0f alpha:1];
         
-        
-        NSString *currentValueStr=[NSString stringWithFormat:@"%@  %@",value,unit];
-        NSMutableAttributedString *labelText=[[NSMutableAttributedString alloc] initWithString:currentValueStr];
-        [labelText addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Helvetica-Bold" size:30.0] range:NSMakeRange(0,[value length])];
-        [labelText addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Helvetica-Bold" size:12.0] range:NSMakeRange([value length],[currentValueStr length]-[value length])];
+        //当前值 和 百分比
         currentValueLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, APPS_DEVICE_WIDTH/2, VIEWHEIGHT)];
         currentValueLabel.textAlignment=NSTextAlignmentCenter;
-        currentValueLabel.attributedText=labelText;
         [self addSubview:currentValueLabel];
-    
         
+    
         processGoalLabel = [[UILabel alloc] initWithFrame:CGRectMake(APPS_DEVICE_WIDTH/2, 0, APPS_DEVICE_WIDTH/2, VIEWHEIGHT)];
-        CGFloat percentValue=[value floatValue]/[goal floatValue] * 100;
-        NSString *goalLabelStr=[NSString stringWithFormat:@"%1.f%@  GOAL",percentValue,@"%"];
-        NSMutableAttributedString *goalText=[[NSMutableAttributedString alloc] initWithString:goalLabelStr];
-        [goalText addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Helvetica-Bold" size:30.0] range:NSMakeRange(0,[goalLabelStr length]-5)];
-        [goalText addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Helvetica-Bold" size:12.0] range:NSMakeRange([goalLabelStr length]-4,4)];
         processGoalLabel.textAlignment=NSTextAlignmentCenter;
-        processGoalLabel.attributedText=goalText;
         [self addSubview:processGoalLabel];
         
+        //目标值
         goalLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, APPS_DEVICE_WIDTH, VIEWHEIGHT)];
-        NSString *dailyGoalStr=[NSString stringWithFormat:@"%@  %@  %@",@"DAILY GOAL",goal,unit];
-        NSMutableAttributedString *dailyGoalText=[[NSMutableAttributedString alloc] initWithString:dailyGoalStr];
-        [dailyGoalText addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Helvetica" size:14.0] range:NSMakeRange(0,10)];
-        [dailyGoalText addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Helvetica-Bold" size:30.0] range:NSMakeRange(12,[goal length])];
-        [dailyGoalText addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Helvetica-Bold" size:12.0] range:NSMakeRange(12+2+[goal length],[unit length])];
-        goalLabel.textAlignment=NSTextAlignmentCenter;
-        goalLabel.attributedText=dailyGoalText;
         goalLabel.hidden=YES;
         [self addSubview:goalLabel];
+        
+        [self updateUIWithCurrentValue:value];
+        
+
         
     }
     return self;
@@ -76,6 +70,36 @@
         currentValueLabel.hidden=NO;
         processGoalLabel.hidden=NO;
     }
+}
+
+-(void)updateUIWithCurrentValue:(NSString *)value{
+    
+    NSString *currentValueStr=[NSString stringWithFormat:@"%@  %@",value,goalUnit];
+    NSMutableAttributedString *labelText=[[NSMutableAttributedString alloc] initWithString:currentValueStr];
+    [labelText addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Helvetica-Bold" size:30.0] range:NSMakeRange(0,[value length])];
+    [labelText addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Helvetica-Bold" size:12.0] range:NSMakeRange([value length],[currentValueStr length]-[value length])];
+    currentValueLabel.attributedText=labelText;
+    
+    
+    
+    CGFloat percentValue=[value floatValue]/[goalValue floatValue] * 100;
+    NSString *goalLabelStr=[NSString stringWithFormat:@"%1.f%@  GOAL",percentValue,@"%"];
+    NSMutableAttributedString *goalText=[[NSMutableAttributedString alloc] initWithString:goalLabelStr];
+    [goalText addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Helvetica-Bold" size:30.0] range:NSMakeRange(0,[goalLabelStr length]-5)];
+    [goalText addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Helvetica-Bold" size:12.0] range:NSMakeRange([goalLabelStr length]-4,4)];
+
+    processGoalLabel.attributedText=goalText;
+    
+    
+    NSString *dailyGoalStr=[NSString stringWithFormat:@"%@  %@  %@",@"DAILY GOAL",goalValue,goalUnit];
+    
+    NSMutableAttributedString *dailyGoalText=[[NSMutableAttributedString alloc] initWithString:dailyGoalStr];
+    [dailyGoalText addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Helvetica" size:14.0] range:NSMakeRange(0,10)];
+    [dailyGoalText addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Helvetica-Bold" size:30.0] range:NSMakeRange(12,[goalValue length])];
+    [dailyGoalText addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Helvetica-Bold" size:12.0] range:NSMakeRange(12+2+[goalValue length],[goalUnit length])];
+    goalLabel.textAlignment=NSTextAlignmentCenter;
+    goalLabel.attributedText=dailyGoalText;
+
 }
 
 @end

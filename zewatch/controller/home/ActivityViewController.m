@@ -27,6 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self initTableView];
 }
 
@@ -35,6 +36,7 @@
     
     //计算cell的高度
     cellHeight = [self getCellHeight];
+    
     
     self.view.backgroundColor=[UIColor whiteColor];
     //初始化导航
@@ -70,24 +72,20 @@
     
     GGCirclePanelView *circlePanelView=[[GGCirclePanelView alloc] initWithFrame:CGRectMake(0,CGRectGetMaxY(dateSelectView.frame), self.view.frame.size.width,headView.frame.size.height - 70) dateSource:array headImg:@"Icon.png"];
     [headView addSubview:circlePanelView];
+    
     self.tableView.tableHeaderView=headView;
  
-    
     GGSportTypeModel *s1 =[[GGSportTypeModel alloc] initWithSportType:@"STEPS" sportValue:@"3000" sportUnit:@""];
     GGSportTypeModel *s2 =[[GGSportTypeModel alloc] initWithSportType:@"DISTANCE" sportValue:@"8" sportUnit:@"km"];
     GGSportTypeModel *s3 =[[GGSportTypeModel alloc] initWithSportType:@"CALORES" sportValue:@"300" sportUnit:@"kal"];
     GGSportTypeModel *s4 =[[GGSportTypeModel alloc] initWithSportType:@"SLEEP" sportValue:@"8" sportUnit:@"hours"];
-    
     dataSource=[NSArray arrayWithObjects:s1,s2,s3,s4,nil];
     
 }
 
-
 -(void)clickRightBarButtonItem:(UIBarButtonItem *)item{
     
 }
-
-
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 4;
@@ -124,13 +122,13 @@
     label.textColor =[UIColor whiteColor];
     [updateView addSubview:label];
     
+//    label.font=[UIFont fontWithName:@"AlphaBetaBRK" size:12];
+
     UIImageView *updateIconImageView=[[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetMinX(label.frame)-30, 8, 24, 24)];
     updateIconImageView.image=[UIImage imageNamed:@"Icon.png"];
     [updateView addSubview:updateIconImageView];
-    
     UITapGestureRecognizer *tapGestureRecognizer=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapUpdateView)];
     [updateView addGestureRecognizer:tapGestureRecognizer];
-    
     return  updateView;
 }
 

@@ -113,15 +113,38 @@ CG_INLINE BOOL isIPhone4()
             self.containerView = origin;
         else{}
             //NSAssert(NO, @"Invalid origin provided to ActionSheetPicker ( %@ )", origin);
-
-        UIBarButtonItem *sysDoneButton = [self createButtonWithType:UIBarButtonSystemItemDone target:self
-                                                             action:@selector(actionPickerDone:)];
-
-        UIBarButtonItem *sysCancelButton = [self createButtonWithType:UIBarButtonSystemItemCancel target:self
-                                                               action:@selector(actionPickerCancel:)];
-
-        [self setCancelBarButtonItem:sysCancelButton];
-        [self setDoneBarButtonItem:sysDoneButton];
+        
+        
+        
+//
+//        UIBarButtonItem *sysDoneButton = [self createButtonWithType:UIBarButtonSystemItemDone target:self
+//                                                             action:@selector(actionPickerDone:)];
+//        
+//        
+//        
+//        UIBarButtonItem *sysCancelButton = [self createButtonWithType:UIBarButtonSystemItemCancel target:self
+//                                                               action:@selector(actionPickerCancel:)];
+        
+        
+        UIButton *doneBtn=[[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, 30)];
+        [doneBtn setTitle:@"Done" forState:UIControlStateNormal];
+        [doneBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        [doneBtn addTarget:self action:@selector(actionPickerDone:) forControlEvents:UIControlEventTouchUpInside];
+        [doneBtn sizeToFit];
+        
+        UIButton *cancelBtn=[[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, 30)];
+        [cancelBtn setTitle:@"Cancel" forState:UIControlStateNormal];
+        [cancelBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        [cancelBtn addTarget:self action:@selector(actionPickerCancel:) forControlEvents:UIControlEventTouchUpInside];
+        [cancelBtn sizeToFit];
+        
+        
+        UIBarButtonItem  *customDone=[[UIBarButtonItem alloc] initWithCustomView:doneBtn];
+        
+        UIBarButtonItem  *cancelDone=[[UIBarButtonItem alloc] initWithCustomView:cancelBtn];
+        
+        [self setCancelBarButtonItem:cancelDone];
+        [self setDoneBarButtonItem:customDone];
 
         //allows us to use this without needing to store a reference in calling class
         self.selfReference = self;

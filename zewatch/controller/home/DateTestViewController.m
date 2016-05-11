@@ -33,7 +33,9 @@
 
 @end
 
-@implementation DateTestViewController
+@implementation DateTestViewController{
+    GGBezierView *bview;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -118,11 +120,19 @@
 //    [self.view addSubview:view];
     
     
-//    GGBezierView *bview=[[GGBezierView alloc] initWithFrame:CGRectMake(0, 0, 400, 400)];
-//    bview.backgroundColor=[UIColor blackColor];
-//    [self.view addSubview:bview];
+    bview=[[GGBezierView alloc] initWithFrame:CGRectMake(0, 0, 400, 400)];
+    bview.backgroundColor=[UIColor blackColor];
+    [self.view addSubview:bview];
     
     
+    
+    UIButton *mbtn =[[UIButton alloc] initWithFrame:CGRectMake(0, 450, 50, 50)];
+    
+    mbtn.backgroundColor=[UIColor redColor];
+    
+    [mbtn addTarget:self action:@selector(clickMeeee) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:mbtn];
 
 //
 //    GGSleepTypeView *sleepTypeView=[[GGSleepTypeView alloc] initWithFrame:CGRectMake(0, 125,SCREENWIDTH/2,(SCREENHEIGHT-y-40)/3)];
@@ -152,10 +162,16 @@
     //48 即下方TabBar 高度
     GGSleepTypePanelView *sleepTypePanelView=[[GGSleepTypePanelView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(view.frame),APPS_DEVICE_WIDTH,(APPS_DEVICE_HEIGHT-CGRectGetMaxY(view.frame)-48))];
     [sleepTypePanelView setDataSouce:dataSource];
-    [self.view addSubview:sleepTypePanelView];
+//    [self.view addSubview:sleepTypePanelView];
+
     
 }
 
+
+-(void)clickMeeee{
+    
+    [bview setNeedsDisplay];
+}
 
 
 //睡眠的代理
@@ -261,8 +277,10 @@
 }
 
 -(NSArray *)dataSourceOfColumnView:(GGColumnView *)columnView{
+    
     NSArray *tempArray=[NSArray arrayWithObjects:@(6),@(12),@(36),@(48),@(12),@(56),@(78),@(12),@(36),@(48),@(12),@(56),@(78),@(12),@(36),@(48),@(12),@(56),@(78),@(12),@(36),@(48),@(12),@(56),@(6),@(12),@(36),@(48),@(12),@(56),@(78),nil];
     return tempArray;
+    
 }
 
 @end

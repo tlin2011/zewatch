@@ -47,6 +47,10 @@
 
     [self initDrawParam];
     
+    if (!(dataSource && dataSource.count>0)) {
+        return;
+    }
+    
     CGFloat x;
     CGFloat y;
     CGFloat h;
@@ -171,12 +175,24 @@
  */
 
 -(void)initDrawParam{
+    
     dataSource =[self.delegate dataSourceOfBlockColumnView:self];
-    NSDate *startDate=((BlockColumnModel *)dataSource[0]).startPoint;
-    NSDate *endDate=((BlockColumnModel *)dataSource[dataSource.count-1]).endPoint;
-    NSTimeInterval totalSecond=[endDate timeIntervalSinceDate:startDate];
-    perMinute = (APPS_DEVICE_WIDTH - 3 * LEADING) / (totalSecond / 60);
+    
+    //
+    
+    if (dataSource && dataSource.count>0) {
+        NSDate *startDate=((BlockColumnModel *)dataSource[0]).startPoint;
+        NSDate *endDate=((BlockColumnModel *)dataSource[dataSource.count-1]).endPoint;
+        NSTimeInterval totalSecond=[endDate timeIntervalSinceDate:startDate];
+        perMinute = (APPS_DEVICE_WIDTH - 3 * LEADING) / (totalSecond / 60);
+    }
 }
+
+
+-(void)checkDistinct:(NSArray *)array{
+    
+}
+
 
 - (void)drawRect:(CGRect)rect {
     CGContextRef context=UIGraphicsGetCurrentContext();
@@ -242,12 +258,8 @@
         }
     }
     
-    
-    
     CGFloat linex=line.frame.origin.x;
-    
     double timeIntervar=((linex - 2 * LEADING) / perMinute * 60) + 60;
-    
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"HH:mm"];
@@ -267,18 +279,14 @@
     }
 }
 
-
 #pragma  mark 添加下方的指示下标
-
 -(void)addBlockColumn{
     //每个view的宽度
     CGFloat width=(APPS_DEVICE_WIDTH - 3 * LEADING) / 3;
-    
     for (int i=0; i<3; i++) {
         [self addSubview:[self addBlockColumnLabelAndImage:i width:width]];
     }
 }
-
 
 //参数说明，可以通过index 控制frame
 -(UIView *)addBlockColumnLabelAndImage:(NSInteger)index width:(CGFloat)width{

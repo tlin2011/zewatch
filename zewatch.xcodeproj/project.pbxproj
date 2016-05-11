@@ -60,6 +60,8 @@
 		BFE7C2F61C6096A8008A5719 /* ActivityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE7C2F51C6096A8008A5719 /* ActivityModel.m */; };
 		BFFD91561CDAEC48000608EC /* AppsCircleProView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFD91551CDAEC48000608EC /* AppsCircleProView.m */; };
 		BFFD91591CDB4F09000608EC /* GGSportTypeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFD91581CDB4F09000608EC /* GGSportTypeModel.m */; };
+		BFFE1B7F1CDC761F000A2F35 /* brk.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFFE1B7E1CDC761F000A2F35 /* brk.ttf */; };
+		BFFE1B821CDC7A20000A2F35 /* UILabel+CustomFont.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFE1B811CDC7A20000A2F35 /* UILabel+CustomFont.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -174,6 +176,9 @@
 		BFFD91551CDAEC48000608EC /* AppsCircleProView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppsCircleProView.m; sourceTree = "<group>"; };
 		BFFD91571CDB4F09000608EC /* GGSportTypeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGSportTypeModel.h; sourceTree = "<group>"; };
 		BFFD91581CDB4F09000608EC /* GGSportTypeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGSportTypeModel.m; sourceTree = "<group>"; };
+		BFFE1B7E1CDC761F000A2F35 /* brk.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = brk.ttf; sourceTree = "<group>"; };
+		BFFE1B801CDC7A20000A2F35 /* UILabel+CustomFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+CustomFont.h"; sourceTree = "<group>"; };
+		BFFE1B811CDC7A20000A2F35 /* UILabel+CustomFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+CustomFont.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +212,8 @@
 			children = (
 				BF0A0F8E1CB3B49D00B9D403 /* NSDate+Utilities.h */,
 				BF0A0F8F1CB3B49D00B9D403 /* NSDate+Utilities.m */,
+				BFFE1B801CDC7A20000A2F35 /* UILabel+CustomFont.h */,
+				BFFE1B811CDC7A20000A2F35 /* UILabel+CustomFont.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -349,6 +356,7 @@
 		BF790FC11C5CE97500377742 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				BFFE1B7D1CDC761F000A2F35 /* OtherResource */,
 				BF790FC21C5CE97500377742 /* ImageResource */,
 			);
 			path = Resource;
@@ -400,10 +408,10 @@
 				BF0A0F941CB3BBF600B9D403 /* GGDatePicker.xib */,
 				BF5AD1551CBB989500DF69DF /* GGColumnView.h */,
 				BF5AD1561CBB989500DF69DF /* GGColumnView.m */,
-				BF8610091CBF4A100060E897 /* ProcessStateView.h */,
-				BF86100A1CBF4A100060E897 /* ProcessStateView.m */,
 				BF122BC41CCF5A2900A614D5 /* GGBlockColumnView.h */,
 				BF122BC51CCF5A2900A614D5 /* GGBlockColumnView.m */,
+				BF8610091CBF4A100060E897 /* ProcessStateView.h */,
+				BF86100A1CBF4A100060E897 /* ProcessStateView.m */,
 				BF104B5C1CD1F0E900BAEDF5 /* LeaderCell.h */,
 				BF104B5D1CD1F0E900BAEDF5 /* LeaderCell.m */,
 				BF104B5F1CD1F10500BAEDF5 /* LeaderCell.xib */,
@@ -431,6 +439,14 @@
 				BFFD91581CDB4F09000608EC /* GGSportTypeModel.m */,
 			);
 			path = CustomModel;
+			sourceTree = "<group>";
+		};
+		BFFE1B7D1CDC761F000A2F35 /* OtherResource */ = {
+			isa = PBXGroup;
+			children = (
+				BFFE1B7E1CDC761F000A2F35 /* brk.ttf */,
+			);
+			path = OtherResource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -500,6 +516,7 @@
 				TargetAttributes = {
 					BF3C62CF1C5CD2A000B25252 = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 77UJMKMBM8;
 					};
 					BF3C62E81C5CD2A000B25252 = {
 						CreatedOnToolsVersion = 7.1;
@@ -536,6 +553,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFFE1B7F1CDC761F000A2F35 /* brk.ttf in Resources */,
 				BFE7C2EC1C6078E9008A5719 /* icon_logo.png in Resources */,
 				BF3C62E31C5CD2A000B25252 /* LaunchScreen.storyboard in Resources */,
 				BF0A0F951CB3BBF600B9D403 /* GGDatePicker.xib in Resources */,
@@ -601,6 +619,7 @@
 				BF122BC91CCF5F1600A614D5 /* BlockColumnModel.m in Sources */,
 				BF86100B1CBF4A100060E897 /* ProcessStateView.m in Sources */,
 				BF3C62D51C5CD2A000B25252 /* main.m in Sources */,
+				BFFE1B821CDC7A20000A2F35 /* UILabel+CustomFont.m in Sources */,
 				BF104B5E1CD1F0E900BAEDF5 /* LeaderCell.m in Sources */,
 				BF0A0F931CB3BBDA00B9D403 /* GGDatePicker.m in Sources */,
 				BFC210151CDAE44C006A0C88 /* GGCirclePanelView.m in Sources */,
@@ -750,12 +769,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "zewatch/zewatch-Prefix.pch";
 				INFOPLIST_FILE = zewatch/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = mykronoz.zewatch;
+				PRODUCT_BUNDLE_IDENTIFIER = mykronoz.zewatch2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -763,12 +785,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "zewatch/zewatch-Prefix.pch";
 				INFOPLIST_FILE = zewatch/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = mykronoz.zewatch;
+				PRODUCT_BUNDLE_IDENTIFIER = mykronoz.zewatch2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
