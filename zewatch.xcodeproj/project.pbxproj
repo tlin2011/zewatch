@@ -56,7 +56,6 @@
 		BFE7C2EC1C6078E9008A5719 /* icon_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = BFE7C2EB1C6078E9008A5719 /* icon_logo.png */; };
 		BFE7C2F11C608B6E008A5719 /* ActivityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE7C2EF1C608B6E008A5719 /* ActivityTableViewCell.m */; };
 		BFE7C2F21C608B6E008A5719 /* ActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFE7C2F01C608B6E008A5719 /* ActivityTableViewCell.xib */; };
-		BFE7C2F61C6096A8008A5719 /* ActivityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE7C2F51C6096A8008A5719 /* ActivityModel.m */; };
 		BFFD91561CDAEC48000608EC /* AppsCircleProView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFD91551CDAEC48000608EC /* AppsCircleProView.m */; };
 		BFFD91591CDB4F09000608EC /* GGSportTypeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFD91581CDB4F09000608EC /* GGSportTypeModel.m */; };
 		BFFE1B7F1CDC761F000A2F35 /* brk.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFFE1B7E1CDC761F000A2F35 /* brk.ttf */; };
@@ -167,8 +166,6 @@
 		BFE7C2EE1C608B6E008A5719 /* ActivityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActivityTableViewCell.h; path = ../../../../../../apple/Desktop/mykronoz/zewatch/zewatch/CustomView/ActivityTableViewCell.h; sourceTree = "<group>"; };
 		BFE7C2EF1C608B6E008A5719 /* ActivityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActivityTableViewCell.m; path = ../../../../../../apple/Desktop/mykronoz/zewatch/zewatch/CustomView/ActivityTableViewCell.m; sourceTree = "<group>"; };
 		BFE7C2F01C608B6E008A5719 /* ActivityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ActivityTableViewCell.xib; path = ../../../../../../apple/Desktop/mykronoz/zewatch/zewatch/CustomView/ActivityTableViewCell.xib; sourceTree = "<group>"; };
-		BFE7C2F41C6096A8008A5719 /* ActivityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActivityModel.h; path = ../../../../../../apple/Desktop/mykronoz/zewatch/zewatch/CustomModel/ActivityModel.h; sourceTree = "<group>"; };
-		BFE7C2F51C6096A8008A5719 /* ActivityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActivityModel.m; path = ../../../../../../apple/Desktop/mykronoz/zewatch/zewatch/CustomModel/ActivityModel.m; sourceTree = "<group>"; };
 		BFFD91541CDAEC48000608EC /* AppsCircleProView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppsCircleProView.h; sourceTree = "<group>"; };
 		BFFD91551CDAEC48000608EC /* AppsCircleProView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppsCircleProView.m; sourceTree = "<group>"; };
 		BFFD91571CDB4F09000608EC /* GGSportTypeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGSportTypeModel.h; sourceTree = "<group>"; };
@@ -424,8 +421,6 @@
 		BFE7C2F31C609617008A5719 /* CustomModel */ = {
 			isa = PBXGroup;
 			children = (
-				BFE7C2F41C6096A8008A5719 /* ActivityModel.h */,
-				BFE7C2F51C6096A8008A5719 /* ActivityModel.m */,
 				BF122BC71CCF5F1600A614D5 /* BlockColumnModel.h */,
 				BF122BC81CCF5F1600A614D5 /* BlockColumnModel.m */,
 				BFC210101CDADD33006A0C88 /* GGSleepTypeModel.h */,
@@ -602,7 +597,6 @@
 				BF790FC01C5CE2B400377742 /* ZeWatchAppDelegate.m in Sources */,
 				BFC210121CDADD33006A0C88 /* GGSleepTypeModel.m in Sources */,
 				BF3C630A1C5CDA9800B25252 /* ActivityViewController.m in Sources */,
-				BFE7C2F61C6096A8008A5719 /* ActivityModel.m in Sources */,
 				BF674C751CD9FEE3000D9245 /* GGSleepTypePanelView.m in Sources */,
 				BF104B551CD1E9E400BAEDF5 /* ActionSheetCustomPicker.m in Sources */,
 				BF5AD1541CBB8C2900DF69DF /* GGBaseViewController.m in Sources */,
