@@ -122,7 +122,7 @@
     label.textColor =[UIColor whiteColor];
     [updateView addSubview:label];
     
-//    label.font=[UIFont fontWithName:@"AlphaBetaBRK" size:12];
+    //label.font=[UIFont fontWithName:@"AlphaBetaBRK" size:12];
 
     UIImageView *updateIconImageView=[[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetMinX(label.frame)-30, 8, 24, 24)];
     updateIconImageView.image=[UIImage imageNamed:@"Icon.png"];

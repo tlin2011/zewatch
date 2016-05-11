@@ -45,7 +45,6 @@
 		BF674C701CD9E457000D9245 /* GGSleepTypeView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF674C6F1CD9E457000D9245 /* GGSleepTypeView.m */; };
 		BF674C721CD9E495000D9245 /* GGSleepTypeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF674C711CD9E495000D9245 /* GGSleepTypeView.xib */; };
 		BF674C751CD9FEE3000D9245 /* GGSleepTypePanelView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF674C741CD9FEE3000D9245 /* GGSleepTypePanelView.m */; };
-		BF6D5CDB1C60733F00AF22BA /* GoalSettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6D5CDA1C60733F00AF22BA /* GoalSettingTableViewController.m */; };
 		BF790FC01C5CE2B400377742 /* ZeWatchAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF790FBF1C5CE2B400377742 /* ZeWatchAppDelegate.m */; };
 		BF790FC41C5CE97500377742 /* activity_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = BF790FC31C5CE97500377742 /* activity_bg.png */; };
 		BF86100B1CBF4A100060E897 /* ProcessStateView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF86100A1CBF4A100060E897 /* ProcessStateView.m */; };
@@ -150,8 +149,6 @@
 		BF674C711CD9E495000D9245 /* GGSleepTypeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GGSleepTypeView.xib; sourceTree = "<group>"; };
 		BF674C731CD9FEE3000D9245 /* GGSleepTypePanelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGSleepTypePanelView.h; sourceTree = "<group>"; };
 		BF674C741CD9FEE3000D9245 /* GGSleepTypePanelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGSleepTypePanelView.m; sourceTree = "<group>"; };
-		BF6D5CD91C60733F00AF22BA /* GoalSettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GoalSettingTableViewController.h; path = ../../../../../../../apple/Desktop/mykronoz/zewatch/zewatch/controller/home/GoalSettingTableViewController.h; sourceTree = "<group>"; };
-		BF6D5CDA1C60733F00AF22BA /* GoalSettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GoalSettingTableViewController.m; path = ../../../../../../../apple/Desktop/mykronoz/zewatch/zewatch/controller/home/GoalSettingTableViewController.m; sourceTree = "<group>"; };
 		BF790FBD1C5CDE0600377742 /* zewatch-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "zewatch-Prefix.pch"; sourceTree = "<group>"; };
 		BF790FBE1C5CE2B400377742 /* ZeWatchAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZeWatchAppDelegate.h; sourceTree = "<group>"; };
 		BF790FBF1C5CE2B400377742 /* ZeWatchAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZeWatchAppDelegate.m; sourceTree = "<group>"; };
@@ -335,8 +332,6 @@
 				BF86100C1CBF7BC20060E897 /* sport */,
 				BF3C63081C5CDA9800B25252 /* ActivityViewController.h */,
 				BF3C63091C5CDA9800B25252 /* ActivityViewController.m */,
-				BF6D5CD91C60733F00AF22BA /* GoalSettingTableViewController.h */,
-				BF6D5CDA1C60733F00AF22BA /* GoalSettingTableViewController.m */,
 				BF0A0F5C1CB3573100B9D403 /* DateTestViewController.h */,
 				BF0A0F5D1CB3573100B9D403 /* DateTestViewController.m */,
 			);
@@ -609,7 +604,6 @@
 				BF3C630A1C5CDA9800B25252 /* ActivityViewController.m in Sources */,
 				BFE7C2F61C6096A8008A5719 /* ActivityModel.m in Sources */,
 				BF674C751CD9FEE3000D9245 /* GGSleepTypePanelView.m in Sources */,
-				BF6D5CDB1C60733F00AF22BA /* GoalSettingTableViewController.m in Sources */,
 				BF104B551CD1E9E400BAEDF5 /* ActionSheetCustomPicker.m in Sources */,
 				BF5AD1541CBB8C2900DF69DF /* GGBaseViewController.m in Sources */,
 				BF86100F1CBF7BDB0060E897 /* SportViewController.m in Sources */,
