@@ -31,12 +31,19 @@
     //日期选择三种控件
     dateView=[[DateSelectView alloc] initWithPosition:CGPointMake(0, 65) dateType:DateSelectTypeDay delegate:self];
     [self.view addSubview:dateView];
-
+    
+    
+    
     //目标实现状态
-    pview=[[ProcessStateView alloc] initWithValue:@"1234" Goal:@"10000" unit:@"KM" viewY:CGRectGetMaxY(dateView.frame)];
+//    pview=[[ProcessStateView alloc] initWithValue:@"60second" Goal:@"86400" unit:@"" viewY:CGRectGetMaxY(dateView.frame)];
+    
+    pview=[[ProcessStateView alloc] initWithValue:@"1155" Goal:@"10000" unit:@"" viewY:CGRectGetMaxY(dateView.frame)];
+    
     
     columnView=[[GGColumnView alloc] initWithStyle:GGColumnViewStyleDay delegate:self viewY:CGRectGetMaxY(pview.frame)];
     [self.view addSubview:columnView];
+    
+    
     
     //模式的模式为 天
     currentStyle = GGColumnViewStyleDay;
@@ -56,26 +63,36 @@
 -(void)dateSelectView:(DateSelectView *)dateSelectView dateType:(DateSelectType)dateSelectType selectStartDate:(NSDate *)selectStartDate selectEndDate:(NSDate *)selectEndDate{
     currentSelectDate = selectStartDate;
     [columnView reloadData];
+    
 }
 
 #pragma mark  运动数据代理
 //列数
 -(NSInteger)numberOfColumnInColumnView:(GGColumnView *)columnView{
-    switch (currentStyle) {
-        case GGColumnViewStyleDay:
-             return 24;
-            break;
-        case GGColumnViewStyleWeek:
-             return 7;
-            break;
-        case GGColumnViewStyleMonth:
-            return [self getDayCountByYearAndMonth];
-            break;
-        default:
-             return 0;
-            break;
-    }
+//    switch (currentStyle) {
+//        case GGColumnViewStyleDay:
+//             return 24;
+//            break;
+//        case GGColumnViewStyleWeek:
+//             return 7;
+//            break;
+//        case GGColumnViewStyleMonth:
+//            return [self getDayCountByYearAndMonth];
+//            break;
+//        default:
+//             return 0;
+//            break;
+//    }
    
+    NSDateFormatter *myDateFormatter = [[NSDateFormatter alloc] init];
+    [myDateFormatter setDateFormat:@"yyyy-MM"];
+    
+  NSArray *array=  [[myDateFormatter stringFromDate:currentSelectDate] componentsSeparatedByString:@"-"];
+    
+    
+   return [NSDate daysInYear:[array[0] integerValue] month:[array[1] integerValue]];
+    
+    
 }
 
 -(NSInteger)goalOfColumnView:(GGColumnView *)columnView{
@@ -135,6 +152,8 @@
 
 //数据源
 -(NSArray *)dataSourceOfColumnView:(GGColumnView *)columnView{
+
+
     NSArray *tempArray=[NSArray arrayWithObjects:@(6),@(12),@(36),@(48),@(12),@(56),@(78),@(12),@(36),@(48),@(12),@(56),@(150),@(12),@(36),@(48),@(12),@(56),@(78),@(12),@(36),@(48),@(12),@(56),@(6),@(12),@(36),@(48),@(12),@(56),@(78),nil];
 //
 //    NSArray *tempArray =[NSArray array];
@@ -174,6 +193,8 @@
     [columnView switchColumnType:selectStyle];
     currentStyle=selectStyle;
     //重新调用代理方法， 刷新
+    
+
     [columnView reloadData];
     
 }

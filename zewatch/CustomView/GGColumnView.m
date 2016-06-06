@@ -138,13 +138,13 @@
     
     switch (currentStyle) {
         case GGColumnViewStyleDay:
-            [self addDateLabelIndex:24 fontSize:5 style:GGColumnViewStyleDay];
+            [self addDateLabelIndex:24 fontSize:10 style:GGColumnViewStyleDay];
             break;
         case GGColumnViewStyleWeek:
             [self addDateLabelIndex:7 fontSize:9 style:GGColumnViewStyleWeek];
             break;
         case GGColumnViewStyleMonth:
-            [self addDateLabelIndex:drawCount fontSize:5 style:GGColumnViewStyleMonth];
+            [self addDateLabelIndex:drawCount fontSize:7 style:GGColumnViewStyleMonth];
             break;
         default:
             break;
@@ -160,16 +160,24 @@
         CGFloat x=i * columnSpace + i * columnWidth + LEADING ;
         CGFloat y=VIEW_HEIGHT ;
         
-        CGRect labelRect=CGRectMake(x,y, columnWidth,15);
+        //让label 稍微宽度变大， 字体也变大
+        CGRect labelRect;
+        if (style == GGColumnViewStyleWeek) {
+             labelRect=CGRectMake(x ,y, columnWidth,15);
+        }else{
+             labelRect=CGRectMake(x - columnSpace  ,y, columnWidth + 2 * columnSpace ,15);
+        }
+       
         
         UILabel *label=[[UILabel alloc] initWithFrame:labelRect];
         label.font=[UIFont systemFontOfSize:fontSize];
-        
+
         if (style==GGColumnViewStyleWeek) {
             label.text=allWeekName[i];
         }else{
             label.text=[NSString stringWithFormat:@"%d",i+1];
         }
+        label.tag = 270 + i;
         label.textAlignment=NSTextAlignmentCenter;
         label.backgroundColor=[UIColor clearColor];
         [self addSubview:label];
@@ -319,15 +327,30 @@
         line.backgroundColor=intersectsColor;
         showTipLabel.text=[self.delegate intersectsShowTipColumnView:self intersectsIndex:tag-100];
         showTipLabel.hidden=NO;
+        
+        UILabel *indexLabel=(UILabel *)[self viewWithTag:270+tag-100];
+
+        CABasicAnimation *scaleAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+        scaleAnimation.fromValue = [NSNumber numberWithFloat:1.0];
+        scaleAnimation.toValue = [NSNumber numberWithFloat:2.0];
+        scaleAnimation.duration = 0.5f;
+//        scaleAnimation.fillMode=kCAFillModeForwards ;
+//        scaleAnimation.removedOnCompletion =YES;
+//        scaleAnimation.autoreverses=YES;
+        scaleAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+        [indexLabel.layer addAnimation:scaleAnimation forKey:@"animationGroup"];
+        
     }else{
+        
         line.backgroundColor=intersectsColor;
         showTipLabel.hidden=YES;
+
     }
+    
 }
 
 -(void)switchColumnType:(GGColumnViewStyle)type{
     currentStyle = type;
 }
-
 
 @end

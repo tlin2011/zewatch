@@ -15,6 +15,8 @@
 #import "GGSportTypeModel.h"
 
 
+extern int currentSelectDate;
+
 @interface ActivityViewController ()
 
 @end
@@ -23,6 +25,8 @@
     NSArray *dataSource;
     
     CGFloat cellHeight;
+    
+    DateSelectView *dateSelectView;
 }
 
 - (void)viewDidLoad {
@@ -31,6 +35,10 @@
     [self initTableView];
 }
 
+
+-(void)viewDidAppear:(BOOL)animated{
+    [dateSelectView reloadDate];
+}
 
 -(void)initTableView{
     
@@ -65,7 +73,7 @@
     UIView *headView=[[UIView alloc] initWithFrame:CGRectMake(0, 0,APPS_DEVICE_WIDTH,self.view.frame.size.height*0.3)];
     headView.backgroundColor=[UIColor whiteColor];
     
-    DateSelectView *dateSelectView=[[DateSelectView alloc] initWithPosition:CGPointMake(0, 0) dateType:DateSelectTypeDay delegate:self];
+    dateSelectView=[[DateSelectView alloc] initWithPosition:CGPointMake(0, 0) dateType:DateSelectTypeDay delegate:self];
     [headView addSubview:dateSelectView];
     
     NSArray *array=[NSArray arrayWithObjects:@(0.5),@(0.3),@(0.7),@(0.3),nil];
@@ -225,6 +233,9 @@
     }
 
 }
+
+
+
 
 -(CGFloat)getCellHeight{
     

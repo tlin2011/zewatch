@@ -20,13 +20,13 @@
 
 #import "GGBezierView.h"
 
-
 #import "GGSleepTypeView.h"
 
 #import "GGSleepTypePanelView.h"
 
 
 #import "GGSleepTypeModel.h"
+
 
 
 @interface DateTestViewController ()
@@ -39,11 +39,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor=[UIColor whiteColor];
+//    self.view.backgroundColor=[UIColor whiteColor];
     
     //日期选择三种控件
     DateSelectView *view=[[DateSelectView alloc] initWithPosition:CGPointMake(0, 65) dateType:DateSelectTypeDay delegate:self];
     [self.view addSubview:view];
+    
+    
+    self.view.backgroundColor=[UIColor whiteColor];
 //
 //    DateSelectView *view2=[[DateSelectView alloc] initWithPosition:CGPointMake(0, 180) dateType:DateSelectTypeWeek delegate:self];
 ////    [self.view addSubview:view2];
@@ -94,6 +97,8 @@
     
     
     
+    
+    
 //    for (BlockColumnModel *m in sortedArray) {
 //        NSLog(@"%@",m.startPoint);
 //    }
@@ -120,19 +125,24 @@
 //    [self.view addSubview:view];
     
     
-    bview=[[GGBezierView alloc] initWithFrame:CGRectMake(0, 0, 400, 400)];
-    bview.backgroundColor=[UIColor blackColor];
+    bview=[[GGBezierView alloc] initWithFrame:CGRectMake(0, 80, 400, 350)];
+//    bview.backgroundColor=[UIColor blackColor];
     [self.view addSubview:bview];
     
     
-    
-    UIButton *mbtn =[[UIButton alloc] initWithFrame:CGRectMake(0, 450, 50, 50)];
-    
-    mbtn.backgroundColor=[UIColor redColor];
-    
-    [mbtn addTarget:self action:@selector(clickMeeee) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.view addSubview:mbtn];
+//
+//    UIButton *mbtn =[[UIButton alloc] initWithFrame:CGRectMake(0, 350, 50, 50)];
+//    mbtn.backgroundColor=[UIColor redColor];
+//    [mbtn addTarget:self action:@selector(clickMeeee) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:mbtn];
+//    
+//    
+//    
+//    
+//    UIButton *m2btn =[[UIButton alloc] initWithFrame:CGRectMake(100, 350, 50, 50)];
+//    m2btn.backgroundColor=[UIColor redColor];
+//    [m2btn addTarget:self action:@selector(clickMeeee2) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:m2btn];
 
 //
 //    GGSleepTypeView *sleepTypeView=[[GGSleepTypeView alloc] initWithFrame:CGRectMake(0, 125,SCREENWIDTH/2,(SCREENHEIGHT-y-40)/3)];
@@ -151,11 +161,11 @@
     
     GGSleepTypeModel *s3=[[GGSleepTypeModel alloc] initWithImageName:@"Icon.png" sleepTypeName:@"Light Sleep" sleepTypeValue:@"4 h 10 min"];
     
-        GGSleepTypeModel *s4=[[GGSleepTypeModel alloc] initWithImageName:@"Icon.png" sleepTypeName:@"Light Sleep" sleepTypeValue:@"4 h 10 min"];
+    GGSleepTypeModel *s4=[[GGSleepTypeModel alloc] initWithImageName:@"Icon.png" sleepTypeName:@"Light Sleep" sleepTypeValue:@"4 h 10 min"];
     
-        GGSleepTypeModel *s5=[[GGSleepTypeModel alloc] initWithImageName:@"Icon.png" sleepTypeName:@"Light Sleep" sleepTypeValue:@"4 h 10 min"];
+    GGSleepTypeModel *s5=[[GGSleepTypeModel alloc] initWithImageName:@"Icon.png" sleepTypeName:@"Light Sleep" sleepTypeValue:@"4 h 10 min"];
     
-        GGSleepTypeModel *s6=[[GGSleepTypeModel alloc] initWithImageName:@"Icon.png" sleepTypeName:@"Light Sleep" sleepTypeValue:@"4 h 10 min"];
+    GGSleepTypeModel *s6=[[GGSleepTypeModel alloc] initWithImageName:@"Icon.png" sleepTypeName:@"Light Sleep" sleepTypeValue:@"4 h 10 min"];
     
     
     NSArray *dataSource=[NSArray arrayWithObjects:s1,s2,s3,s4,s5,s6,nil];
@@ -163,15 +173,36 @@
     GGSleepTypePanelView *sleepTypePanelView=[[GGSleepTypePanelView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(view.frame),APPS_DEVICE_WIDTH,(APPS_DEVICE_HEIGHT-CGRectGetMaxY(view.frame)-48))];
     [sleepTypePanelView setDataSouce:dataSource];
 //    [self.view addSubview:sleepTypePanelView];
-
+//
+//    
+//    
+//    
+//    self.musicPlayerController = [MPMusicPlayerController systemMusicPlayer];//初始化系统音乐播放器
+//    
     
 }
 
 
 -(void)clickMeeee{
+
+        [self.musicPlayerController pause]; //暂停
+
     
-    [bview setNeedsDisplay];
+//    [bview setNeedsDisplay];
 }
+
+-(void)clickMeeee2{
+
+    
+    [self.musicPlayerController play]; //播放
+
+    
+    [self.musicPlayerController skipToPreviousItem];
+//} else if (bytes[2] == 0x03) { // 切换下一曲
+//    [self.musicPlayerController skipToNextItem];
+    //    [bview setNeedsDisplay];
+}
+
 
 
 //睡眠的代理

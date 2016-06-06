@@ -10,6 +10,8 @@
 #import "NSDate+Utilities.h"
 #import "ActionSheetDatePicker.h"
 
+int currentSelectDate;
+
 @implementation DateSelectView{
     DateSelectType selectDateType;  //要显示的日期类型
     NSDate *currenDate;             //当前显示的时间   周  月 为第一天
@@ -47,6 +49,14 @@
         //判断是否是最后一页
         NSLog(@"THE LAST PAGE");
         return;
+    }
+    
+    if (selectDateType ==DateSelectTypeDay) {
+        if (advance) {
+            currentSelectDate++;
+        }else{
+            currentSelectDate--;
+        }
     }
     
     switch (selectDateType) {
@@ -96,9 +106,12 @@
 - (IBAction)clickSelectDate:(UIButton *)sender{
     
     
+    NSDate * today = [NSDate date];
+    NSDate *disDate = [today dateByAddingTimeInterval:-currentSelectDate* SECONDSPERDAY];
+    
     ActionSheetDatePicker *actionSheetPicker =[[ActionSheetDatePicker alloc] initWithTitle:@""
                                                                             datePickerMode:UIDatePickerModeDate
-                                                                              selectedDate:[NSDate date]
+                                                                              selectedDate:disDate
                                                                                minimumDate:[NSDate dateFromString_yyyy_MM_dd:@"2014-12"]
                                                                                maximumDate:[NSDate date]
                                                                                     target:self
@@ -128,6 +141,9 @@
     
     //距离今天多少天
     NSInteger count = [self distanceInDaysToDate:dateStr];
+    
+    
+    currentSelectDate = count;
     
     switch (selectDateType) {
         case DateSelectTypeDay:
@@ -189,35 +205,67 @@
 //初始化显示日期信息
 -(void)showDateMsg{
     
-    currentDateIndex=0;
-    
     switch (selectDateType) {
         case DateSelectTypeDay:
+            currentDateIndex =currentSelectDate ;
             [self changeDayInfo:YES count:0];
             break;
         case DateSelectTypeWeek:
+            [self getCurrentWeekNumber];
+            currentDateIndex = currentSelectDate>currentWeek?(int)(currentSelectDate-currentWeek-1)/7+1:0;
             [self changeWeekInfo:YES count:0];
             break;
         case DateSelectTypeMonth:
-            [self changeMonthInfo:YES count:0 selectDateStr:@""];
+            [self changeMonthInfo:YES count:1 selectDateStr:[self getDateStrAddingDay:currentSelectDate]];
             break;
         default:
             break;
     }
+    
+}
+
+
+-(NSString *)getDateStrAddingDay:(int)addNumber{
+    NSDate * today = [NSDate date];
+    NSDate *disDate = [today dateByAddingTimeInterval:-addNumber * SECONDSPERDAY];
+    NSDateFormatter *myDateFormatter = [[NSDateFormatter alloc] init];
+    [myDateFormatter setDateFormat:@"yyyy-MM-dd"];
+    return [myDateFormatter stringFromDate:disDate];
+}
+
+
+
+-(void)getCurrentWeekNumber{
+    //得出周几
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSCalendarUnit calendarUnit = NSWeekdayCalendarUnit;
+    NSDateComponents *theComponents = [calendar components:calendarUnit fromDate:[NSDate date]];
+    
+    NSInteger tempWeek=theComponents.weekday - 2;
+    
+    
+    // 系统数字和星期之间的切换
+    if (tempWeek==-1) {
+        tempWeek = 6;
+    }
+    
+    //记录今天是周几
+    currentWeek=tempWeek;
 }
 
 //改变day  参数为 翻页方向 和页数
 -(void)changeDayInfo:(BOOL)flag count:(NSInteger)count{
-    
     if (flag) {
         currentDateIndex+=count;
     }else{
         currentDateIndex-=count;
     }
-    
     [self updateDateSelectUI];
-    
 }
+
+
+
+
 
 -(void)changeWeekInfo:(BOOL)flag count:(NSInteger)count{
     
@@ -267,21 +315,21 @@
     NSDateFormatter *myDateFormatter = [[NSDateFormatter alloc] init];
     [myDateFormatter setDateFormat:@"yyyy-MM-dd"];
     
-    //初始化
-    if (count==0) {
-        
-        NSArray *dateArray=[[myDateFormatter stringFromDate:today] componentsSeparatedByString:@"-"];
-        NSDate *startDate=[myDateFormatter dateFromString:[NSString stringWithFormat:@"%@-%@-01",dateArray[0],dateArray[1]]];
-        
-        //如果是月模式，则保存1号
-        currenDate=startDate;
-        self.dateWeekBtn.text = @"月";
-        int  dayCount=[self daysInYear:[dateArray[0] integerValue] month:[dateArray[1] integerValue]];
-        
-        NSArray *showArray=[NSArray arrayWithObjects:dateArray[0],dateArray[1],@"01",dateArray[0],dateArray[1],@(dayCount),nil];
-        [self updateDateDetail:showArray type:0];
-        return;
-    }
+//    //初始化
+//    if (count==0) {
+//        
+//        NSArray *dateArray=[[myDateFormatter stringFromDate:today] componentsSeparatedByString:@"-"];
+//        NSDate *startDate=[myDateFormatter dateFromString:[NSString stringWithFormat:@"%@-%@-01",dateArray[0],dateArray[1]]];
+//        
+//        //如果是月模式，则保存1号
+//        currenDate=startDate;
+//        self.dateWeekBtn.text = @"月";
+//        int  dayCount=[self daysInYear:[dateArray[0] integerValue] month:[dateArray[1] integerValue]];
+//        
+//        NSArray *showArray=[NSArray arrayWithObjects:dateArray[0],dateArray[1],@"01",dateArray[0],dateArray[1],@(dayCount),nil];
+//        [self updateDateDetail:showArray type:0];
+//        return;
+//    }
     
     //判断是否为选择日期
     if ([selectDateStr isEqualToString:@""]) {
@@ -289,7 +337,12 @@
         //前翻 后翻
         if (flag) {
             //上月的最后一天
-            NSArray *preDateArray=[[myDateFormatter stringFromDate:[currenDate dateByAddingTimeInterval:-SECONDSPERDAY]] componentsSeparatedByString:@"-"];
+            
+            NSArray *startTimeArray=[[myDateFormatter stringFromDate:currenDate] componentsSeparatedByString:@"-"];
+            NSDate *currentDateResult=[myDateFormatter dateFromString:[NSString stringWithFormat:@"%@-%@-01",startTimeArray[0],startTimeArray[1]]];
+            
+            
+            NSArray *preDateArray=[[myDateFormatter stringFromDate:[currentDateResult dateByAddingTimeInterval:-SECONDSPERDAY]] componentsSeparatedByString:@"-"];
             //上月的第一天
             NSDate *startDate=[myDateFormatter dateFromString:[NSString stringWithFormat:@"%@-%@-01",preDateArray[0],preDateArray[1]]];
             currenDate=startDate;
@@ -380,6 +433,12 @@
     }else{
         return 30;
     }
+}
+
+
+-(void)reloadDate{
+    currentSelectDate=0;
+    [self showDateMsg];
 }
 
 @end

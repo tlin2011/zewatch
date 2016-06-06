@@ -65,5 +65,11 @@ typedef enum{
 
 -(void)switchToType:(DateSelectType)toSelectType;
 
+/**
+ *  @author guotonglin, 16-05-27 11:05:02
+ *
+ *  切面切换时  刷新时间控件
+ */
+-(void)reloadDate;
 
 @end

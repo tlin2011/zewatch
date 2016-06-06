@@ -11,6 +11,8 @@
 #import "DateTestViewController.h"
 
 
+#import <AVFoundation/AVAudioSession.h>
+
 
 @interface ZeWatchAppDelegate ()
 
@@ -20,6 +22,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    
+    
+    
+    
+    
     
     self.window=[[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
@@ -82,7 +90,11 @@
   
 
     
-    [[UIBarButtonItem appearance] setTintColor:[UIColor whiteColor]];
+
+    AVAudioSession *session = [AVAudioSession sharedInstance];
+    [session setActive:YES error:nil];
+    [session setCategory:AVAudioSessionCategoryPlayback error:nil];
+    
     
     return YES;
     

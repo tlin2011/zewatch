@@ -51,6 +51,8 @@
         goalLabel.hidden=YES;
         [self addSubview:goalLabel];
         
+        
+             
         [self updateUIWithCurrentValue:value];
         
 
@@ -72,27 +74,40 @@
     }
 }
 
+
+
+
+
 -(void)updateUIWithCurrentValue:(NSString *)value{
     
+    CGFloat percentValue;
+    if([value hasSuffix:@"second"]){
+        CGFloat valueFloat=[value floatValue];
+        percentValue = valueFloat / [goalValue floatValue] * 100;
+        value = [self getTimeStrWithSecond:[value integerValue]];
+    }else{
+        percentValue=[value floatValue]/[goalValue floatValue] * 100;
+    }
+    
+    
+    
     NSString *currentValueStr=[NSString stringWithFormat:@"%@  %@",value,goalUnit];
+    
     NSMutableAttributedString *labelText=[[NSMutableAttributedString alloc] initWithString:currentValueStr];
     [labelText addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Helvetica-Bold" size:30.0] range:NSMakeRange(0,[value length])];
     [labelText addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Helvetica-Bold" size:12.0] range:NSMakeRange([value length],[currentValueStr length]-[value length])];
     currentValueLabel.attributedText=labelText;
     
-    
-    
-    CGFloat percentValue=[value floatValue]/[goalValue floatValue] * 100;
-    NSString *goalLabelStr=[NSString stringWithFormat:@"%1.f%@  GOAL",percentValue,@"%"];
+
+    NSString *goalLabelStr=[NSString stringWithFormat:@"%.2f%@  GOAL",percentValue,@"%"];
     NSMutableAttributedString *goalText=[[NSMutableAttributedString alloc] initWithString:goalLabelStr];
     [goalText addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Helvetica-Bold" size:30.0] range:NSMakeRange(0,[goalLabelStr length]-5)];
     [goalText addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Helvetica-Bold" size:12.0] range:NSMakeRange([goalLabelStr length]-4,4)];
 
     processGoalLabel.attributedText=goalText;
     
-    
-    NSString *dailyGoalStr=[NSString stringWithFormat:@"%@  %@  %@",@"DAILY GOAL",goalValue,goalUnit];
-    
+
+    NSString *dailyGoalStr=[NSString stringWithFormat:@"%@  %@  %@",@"DAILY GOAL",goalValue,goalUnit];    
     NSMutableAttributedString *dailyGoalText=[[NSMutableAttributedString alloc] initWithString:dailyGoalStr];
     [dailyGoalText addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Helvetica" size:14.0] range:NSMakeRange(0,10)];
     [dailyGoalText addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Helvetica-Bold" size:30.0] range:NSMakeRange(12,[goalValue length])];
@@ -100,6 +115,17 @@
     goalLabel.textAlignment=NSTextAlignmentCenter;
     goalLabel.attributedText=dailyGoalText;
 
+}
+
+-(NSString *)getTimeStrWithSecond:(NSInteger)second{
+    CGFloat hour = second / 3600;
+    CGFloat min  = second % 3600 / 60;
+    
+    if(hour==0){
+        return [NSString stringWithFormat:@"%1.fmin",min];
+    }
+    
+    return [NSString stringWithFormat:@"%1.fh%1.fmin",hour,min];
 }
 
 @end
